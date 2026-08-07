@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gregorynjau-blip.github.io/birds-and-environment-safaris/sitemap.xml
