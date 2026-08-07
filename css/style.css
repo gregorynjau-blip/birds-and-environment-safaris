@@ -10,3 +10,14 @@
 .site-page .btn-primary{background:var(--forest);color:#fff}
 .site-page .btn-earth{background:var(--earth);color:#fff}
 .site-page .btn-light{background:#fff;color:var(--forest)}
+.site-logo{
+  width:180px;
+  height:auto;
+  display:block;
+}
+
+@media(max-width:600px){
+  .site-logo{
+    width:145px;
+  }
+}
