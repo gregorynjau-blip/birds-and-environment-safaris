@@ -1,7 +1,75 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Request a tailor-made safari itinerary from Birds and Environment Safaris."><title>Book Your Safari | Birds and Environment Safaris</title><link rel="stylesheet" href="css/style.css"></head>
-<body>
-<header class="site-header"><div class="nav-wrap"><a class="brand" href="index.html"><span class="brand-name">Birds &amp; Environment</span><span class="brand-tagline">Explore • Respect • Conserve</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><nav class="site-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="tours.html">Safaris</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a class="nav-book active" href="booking.html">Book Now</a></nav></div></header>
-<main><section class="page-banner"><p class="eyebrow">Start planning</p><h1>Request Your Safari</h1></section>
-<section class="section container"><div class="split-section"><div><p class="eyebrow dark">Tell us what you imagine</p><h2>We'll shape the journey around you.</h2><p>Share your dates, interests and preferred travel style. We'll use your information to prepare a tailored safari proposal.</p><ul class="check-list"><li>Wildlife and birdwatching safaris</li><li>Private and tailor-made itineraries</li><li>Southern Tanzania specialists</li><li>Flexible accommodation options</li></ul></div><form class="booking-form" action="https://formspree.io/f/mnqzqvgo" method="POST"><label>Full name<input type="text" name="name" required></label><label>Email<input type="email" name="email" required></label><label>WhatsApp / Phone<input type="tel" name="phone" required></label><div class="form-row"><label>Arrival date<input type="date" name="arrival"></label><label>Travelers<input type="number" name="travelers" min="1" value="2"></label></div><label>Safari interest<select name="interest"><option>Wildlife safari</option><option>Birdwatching</option><option>Wildlife + birdwatching</option><option>Walking / hiking</option><option>Tailor-made adventure</option></select></label><label>Destinations<select name="destination"><option>Ruaha National Park</option><option>Nyerere National Park</option><option>Mikumi National Park</option><option>Udzungwa Mountains</option><option>Multiple destinations</option><option>I'm not sure yet</option></select></label><label>Message / special requests<textarea name="message" rows="6" placeholder="Tell us about your interests, budget, accommodation preference or anything else..."></textarea></label><button class="btn btn-primary" type="submit">Send Safari Request</button><a class="btn btn-whatsapp" href="https://wa.me/255716108475" target="_blank" rel="noopener">Book via WhatsApp</a></form></div></section></main>
-<footer class="site-footer"><div class="container footer-grid"><div><div class="brand-name">Birds &amp; Environment</div><p>Authentic wildlife and birdwatching journeys in Tanzania.</p></div><div><h3>Explore</h3><a href="tours.html">Safaris</a><a href="gallery.html">Gallery</a><a href="about.html">About Us</a></div><div><h3>Plan</h3><a href="booking.html">Book a Safari</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div><div><h3>Contact</h3><a href="https://wa.me/255716108475">+255 716 108 475</a><a href="mailto:birdsandenvironment@outlook.com">birdsandenvironment@outlook.com</a><span>Dar es Salaam, Tanzania</span></div></div><div class="footer-bottom"><div class="container"><span>© 2026 Birds and Environment Safaris</span><span>Explore • Respect • Conserve</span></div></div></footer><script src="js/script.js"></script></body></html>
+<label for="destination">
+  Preferred Destination
+</label>
+
+<select id="destination" name="destination" required>
+
+  <option value="">
+    Select your destination
+  </option>
+
+  <optgroup label="Southern Tanzania — Our Specialty">
+    <option value="Ruaha National Park">
+      Ruaha National Park
+    </option>
+
+    <option value="Nyerere National Park">
+      Nyerere National Park
+    </option>
+
+    <option value="Mikumi National Park">
+      Mikumi National Park
+    </option>
+
+    <option value="Udzungwa Mountains">
+      Udzungwa Mountains
+    </option>
+  </optgroup>
+
+
+  <optgroup label="Northern Tanzania — Additional">
+    <option value="Serengeti National Park">
+      Serengeti National Park
+    </option>
+
+    <option value="Ngorongoro Crater">
+      Ngorongoro Crater
+    </option>
+
+    <option value="Tarangire National Park">
+      Tarangire National Park
+    </option>
+
+    <option value="Lake Manyara National Park">
+      Lake Manyara National Park
+    </option>
+
+    <option value="Northern Tanzania Circuit">
+      Northern Tanzania Circuit
+    </option>
+  </optgroup>
+
+
+  <optgroup label="Other Tanzania Experiences">
+    <option value="Zanzibar">
+      Zanzibar
+    </option>
+
+    <option value="Safari and Zanzibar">
+      Safari + Zanzibar
+    </option>
+
+    <option value="Dar es Salaam City Tour">
+      Dar es Salaam City Tour
+    </option>
+
+    <option value="Cultural Tour">
+      Cultural Tour
+    </option>
+
+    <option value="Tailor Made">
+      Tailor-Made Journey
+    </option>
+  </optgroup>
+
+</select>
