@@ -10,16 +10,14 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="tours-page">
+<body>
 
 <!-- ================= HEADER ================= -->
 
 <header class="site-header">
 
   <div class="nav-wrap">
-
-
-    <button
+<button
       class="menu-toggle"
       aria-label="Open menu"
       onclick="document.querySelector('.site-nav').classList.toggle('open')"
@@ -136,38 +134,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Ruaha National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ruaha National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -203,38 +184,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Nyerere National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Nyerere National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -270,38 +234,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Mikumi National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Mikumi National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -336,38 +283,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Udzungwa Mountains">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Udzungwa Mountains">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -430,38 +360,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Ruaha + Nyerere">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ruaha + Nyerere">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -489,38 +402,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Southern Tanzania Birdwatching">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Southern Tanzania Birdwatching">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -543,38 +439,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Custom Southern Safari">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Custom Southern Safari">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -640,38 +519,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Serengeti National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Serengeti National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -702,38 +564,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Ngorongoro Crater">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ngorongoro Crater">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -763,38 +608,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Tarangire National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Tarangire National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -824,38 +652,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Lake Manyara National Park">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Lake Manyara National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -885,38 +696,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Northern Tanzania Circuit">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Northern Tanzania Circuit">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -944,8 +738,7 @@
 
       <a
         class="btn btn-primary"
-        href="#safari-planner"
-        onclick="setPlannerDestination('Northern Tanzania Circuit')"
+        href="booking.html"
       >
         Plan Northern Safari
       </a>
@@ -1008,38 +801,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Zanzibar Beach Escape">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Zanzibar Beach Escape">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1067,38 +843,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Stone Town & Culture">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Stone Town &amp; Culture">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1125,38 +884,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Safari + Zanzibar">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Safari + Zanzibar">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1219,38 +961,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Dar es Salaam City Tour">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Dar es Salaam City Tour">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1277,38 +1002,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Cultural Tour">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Cultural Tour">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1335,38 +1043,21 @@
         </p>
 
       
-
-        <form class="booking-form itinerary-booking" onsubmit="return submitItineraryBooking(this);">
-          <input type="hidden" name="itinerary" value="Walking Experience">
-
-          <div class="form-row">
-            <label>Full Name
-              <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-            </label>
-            <label>WhatsApp / Phone
-              <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-            </label>
-          </div>
-
-          <div class="form-row">
-            <label>Preferred Travel Date
-              <input type="date" name="date" required>
-            </label>
-            <label>Travellers
-              <input type="number" name="travellers" min="1" value="2" required>
-            </label>
-          </div>
-
-          <label>Email (optional)
-            <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-
-          <label>Special Requests
-            <textarea name="message" rows="3" placeholder="Tell us anything you would like us to know"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary">Book This Safari</button>
-        </form>
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Walking Experience">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number" required>
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <button type="submit" class="btn btn-primary">Book This Safari</button>
+          </form>
+        </div>
 
       </article>
 
@@ -1377,70 +1068,6 @@
 
 </section>
 
-
-<!-- ================================================= -->
-<!-- SAFARI PLANNER -->
-<!-- ================================================= -->
-
-<section class="section section-cream" id="safari-planner">
-
-  <div class="container">
-
-    <div class="section-heading centered">
-      <p class="eyebrow dark">Plan Your Journey</p>
-      <h2>Planning Your Safari</h2>
-      <p>Tell us your preferred destination, dates and travel needs. Your enquiry will open directly in WhatsApp.</p>
-    </div>
-
-    <form class="booking-form safari-planner-form" onsubmit="return submitItineraryBooking(this);">
-      <input type="hidden" name="itinerary" value="Tailor-Made Safari Planning">
-
-      <div class="form-row">
-        <label>Full Name
-          <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
-        </label>
-        <label>WhatsApp / Phone
-          <input type="tel" name="phone" autocomplete="tel" required placeholder="+255 ...">
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>Preferred Destination
-          <select name="destination" id="planner-destination" required>
-            <option value="">Select a destination</option>
-            <option value="Ruaha National Park">Ruaha National Park</option>
-            <option value="Nyerere National Park">Nyerere National Park</option>
-            <option value="Mikumi National Park">Mikumi National Park</option>
-            <option value="Udzungwa Mountains">Udzungwa Mountains</option>
-            <option value="Northern Tanzania Circuit">Northern Tanzania Circuit</option>
-            <option value="Zanzibar">Zanzibar</option>
-            <option value="Tailor-Made Tanzania Safari">Tailor-Made Tanzania Safari</option>
-          </select>
-        </label>
-        <label>Preferred Travel Date
-          <input type="date" name="date" required>
-        </label>
-      </div>
-
-      <div class="form-row">
-        <label>Travellers
-          <input type="number" name="travellers" min="1" value="2" required>
-        </label>
-        <label>Email (optional)
-          <input type="email" name="email" autocomplete="email" placeholder="you@example.com">
-        </label>
-      </div>
-
-      <label>What would you like us to plan?
-        <textarea name="message" rows="4" placeholder="Tell us your interests, number of days, budget or anything else you need."></textarea>
-      </label>
-
-      <button type="submit" class="btn btn-primary">Send Safari Planning Request</button>
-    </form>
-
-  </div>
-
-</section>
 
 <!-- ================================================= -->
 <!-- TAILOR-MADE -->
@@ -1473,7 +1100,7 @@
       <div class="hero-actions">
 
         <a
-          href="#safari-planner"
+          href="booking.html"
           class="btn btn-primary"
         >
           Start Planning
@@ -1607,43 +1234,30 @@
 
 
 
+<style>
+.itinerary-booking{margin-top:1.25rem;padding:1.1rem;border-radius:12px;background:rgba(0,0,0,.035)}
+.itinerary-booking h4{margin:0 0 .8rem}
+.booking-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.65rem}
+.itinerary-booking input,.itinerary-booking textarea{width:100%;padding:.7rem;border:1px solid #ccc;border-radius:7px;box-sizing:border-box;margin-bottom:.65rem;font:inherit}
+.itinerary-booking textarea{resize:vertical}
+@media(max-width:600px){.booking-fields{grid-template-columns:1fr}}
+</style>
 <script>
-  function setPlannerDestination(destination) {
-    var select = document.getElementById('planner-destination');
-    if (select) {
-      select.value = destination;
-    }
-  }
-
-  function submitItineraryBooking(form) {
-    var data = new FormData(form);
-    var itinerary = data.get('itinerary') || data.get('destination') || 'Safari enquiry';
-    var destination = data.get('destination');
-    var name = data.get('name') || '';
-    var phone = data.get('phone') || '';
-    var date = data.get('date') || '';
-    var travellers = data.get('travellers') || '';
-    var email = data.get('email') || '';
-    var message = data.get('message') || '';
-
-    var lines = [
-      'Hello Birds and Environment Safaris,',
-      '',
-      'I would like to plan/book:',
-      itinerary,
-      destination ? 'Destination: ' + destination : '',
-      'Name: ' + name,
-      'WhatsApp/Phone: ' + phone,
-      'Travel date: ' + date,
-      'Travellers: ' + travellers,
-      email ? 'Email: ' + email : '',
-      message ? 'Special requests: ' + message : ''
-    ].filter(Boolean);
-
-    var url = 'https://wa.me/255716108475?text=' + encodeURIComponent(lines.join('\n'));
-    window.open(url, '_blank', 'noopener');
-    return false;
-  }
+function sendItineraryBooking(event, form){
+  event.preventDefault();
+  const data=new FormData(form);
+  const msg=[
+    'Safari Booking Request',
+    'Safari: '+data.get('safari'),
+    'Name: '+data.get('name'),
+    'WhatsApp: '+data.get('whatsapp'),
+    'Email: '+(data.get('email')||'Not provided'),
+    'Travel date: '+data.get('travel_date'),
+    'Travellers: '+data.get('travellers'),
+    'Message: '+(data.get('message')||'None')
+  ].join('\n');
+  window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+}
 </script>
 
 </body>
