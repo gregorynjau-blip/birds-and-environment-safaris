@@ -1,54 +1,76 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tours | Birds and Environment Safaris</title>
-<!-- MAIN WEBSITE STYLE -->
-<link href="css/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tours | Birds and Environment Safaris</title>
+
+  <!-- MAIN WEBSITE STYLE -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
 <!-- ================= HEADER ================= -->
+
 <header class="site-header">
-<div class="nav-wrap">
-<button aria-label="Open menu" class="menu-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')">
+
+  <div class="nav-wrap">
+<button
+      class="menu-toggle"
+      aria-label="Open menu"
+      onclick="document.querySelector('.site-nav').classList.toggle('open')"
+    >
       ☰
     </button>
-<nav class="site-nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a class="active" href="tours.html">Tours</a>
-<a href="gallery.html">Gallery</a>
-<a href="reviews.html">Reviews</a>
-<a href="community.html">Community</a>
-<a href="contact.html">Contact</a>
-<a class="nav-book" href="booking.html">
+
+    <nav class="site-nav">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About</a>
+
+      <a href="tours.html" class="active">Tours</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="reviews.html">Reviews</a>
+
+      <a href="community.html">Community</a>
+
+      <a href="contact.html">Contact</a>
+
+      <a href="booking.html" class="nav-book">
         Book Now
       </a>
-</nav>
-</div>
+
+    </nav>
+
+  </div>
+
 </header>
+
 <!-- LANGUAGE + LIVE VISITOR TOOLS -->
-<div aria-label="Language, visitor count and guests online" class="site-tools">
-<div class="site-tools-inner">
-<div aria-label="Choose language" class="language-flags">
-<span class="language-label">Languages:</span>
-<button class="language-button" onclick="translatePage('en')" title="English" type="button"><span aria-hidden="true" class="flag-emoji">🇬🇧</span> <img alt="English flag" src="images/flags/gb.svg"/> <span>English</span></button>
-<button class="language-button" onclick="translatePage('es')" title="Español" type="button"><span aria-hidden="true" class="flag-emoji">🇪🇸</span> <img alt="Español flag" src="images/flags/es.svg"/> <span>Español</span></button>
-<button class="language-button" onclick="translatePage('it')" title="Italiano" type="button"><span aria-hidden="true" class="flag-emoji">🇮🇹</span> <img alt="Italiano flag" src="images/flags/it.svg"/> <span>Italiano</span></button>
-<button class="language-button" onclick="translatePage('fr')" title="Français" type="button"><span aria-hidden="true" class="flag-emoji">🇫🇷</span> <img alt="Français flag" src="images/flags/fr.svg"/> <span>Français</span></button>
-<button class="language-button" onclick="translatePage('de')" title="Deutsch" type="button"><span aria-hidden="true" class="flag-emoji">🇩🇪</span> <img alt="Deutsch flag" src="images/flags/de.svg"/> <span>Deutsch</span></button>
-<button class="language-button" onclick="translatePage('nl')" title="Nederlands" type="button"><span aria-hidden="true" class="flag-emoji">🇳🇱</span> <img alt="Nederlands flag" src="images/flags/nl.svg"/> <span>Nederlands</span></button>
-<button class="language-button" onclick="translatePage('zh-CN')" title="中文" type="button"><span aria-hidden="true" class="flag-emoji">🇨🇳</span> <img alt="中文 flag" src="images/flags/cn.svg"/> <span>中文</span></button>
-<button class="language-button" onclick="translatePage('ja')" title="日本語" type="button"><span aria-hidden="true" class="flag-emoji">🇯🇵</span> <img alt="日本語 flag" src="images/flags/jp.svg"/> <span>日本語</span></button>
-<button class="language-button" onclick="translatePage('sv')" title="Svenska" type="button"><span aria-hidden="true" class="flag-emoji">🇸🇪</span> <img alt="Svenska flag" src="images/flags/se.svg"/> <span>Svenska</span></button>
-</div>
-<div aria-live="polite" class="activity-box">
-<span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
-<span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
-</div>
-</div>
+<div class="site-tools" aria-label="Language, visitor count and guests online">
+  <div class="site-tools-inner">
+    <div class="language-flags" aria-label="Choose language">
+      <span class="language-label">Languages:</span>
+      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><span class="flag-emoji" aria-hidden="true">🇬🇧</span> <img src="images/flags/gb.svg" alt="English flag"> <span>English</span></button>
+      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><span class="flag-emoji" aria-hidden="true">🇪🇸</span> <img src="images/flags/es.svg" alt="Español flag"> <span>Español</span></button>
+      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><span class="flag-emoji" aria-hidden="true">🇮🇹</span> <img src="images/flags/it.svg" alt="Italiano flag"> <span>Italiano</span></button>
+      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><span class="flag-emoji" aria-hidden="true">🇫🇷</span> <img src="images/flags/fr.svg" alt="Français flag"> <span>Français</span></button>
+      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><span class="flag-emoji" aria-hidden="true">🇩🇪</span> <img src="images/flags/de.svg" alt="Deutsch flag"> <span>Deutsch</span></button>
+      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><span class="flag-emoji" aria-hidden="true">🇳🇱</span> <img src="images/flags/nl.svg" alt="Nederlands flag"> <span>Nederlands</span></button>
+      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><span class="flag-emoji" aria-hidden="true">🇨🇳</span> <img src="images/flags/cn.svg" alt="中文 flag"> <span>中文</span></button>
+      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><span class="flag-emoji" aria-hidden="true">🇯🇵</span> <img src="images/flags/jp.svg" alt="日本語 flag"> <span>日本語</span></button>
+      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><span class="flag-emoji" aria-hidden="true">🇸🇪</span> <img src="images/flags/se.svg" alt="Svenska flag"> <span>Svenska</span></button>
+    </div>
+    <div class="activity-box" aria-live="polite">
+      <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
+      <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
+    </div>
+  </div>
 </div>
 <script>
 function translatePage(lang){
@@ -65,545 +87,741 @@ function translatePage(lang){
     .catch(()=>{today.textContent='—';online.textContent='—';});
 })();
 </script>
+
+
+
+
 <!-- ================= PAGE BANNER ================= -->
+
 <section class="page-banner">
-<p class="eyebrow">
+
+  <p class="eyebrow">
     Explore • Respect • Conserve
   </p>
-<h2>
+
+  <h2>
     Our Tanzania Tours
   </h2>
-<p>
+
+  <p>
     Authentic wildlife safaris, birdwatching and tailor-made
     experiences across Tanzania.
   </p>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- SOUTHERN TANZANIA — SPECIALTY -->
 <!-- ================================================= -->
+
 <section class="section">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow dark">
+
+  <div class="container">
+
+    <div class="section-heading centered">
+
+      <p class="eyebrow dark">
         Our Specialty
       </p>
-<h2>
+
+      <h2>
         Southern Tanzania Safaris
       </h2>
-<p>
+
+      <p>
         Southern Tanzania is our specialty. We focus on authentic,
         less-crowded wildlife experiences in some of Tanzania's
         most remarkable southern destinations.
       </p>
-</div>
-<div class="feature-grid">
-<!-- RUAHA -->
-<article class="feature-card">
-<img alt="Elephants, baobab trees and a safari Land Cruiser in Ruaha National Park, Tanzania" class="tour-image" src="images/ruaha-elephants-baobab-landcruiser.jpg"/>
-<span class="feature-icon">🐘</span>
-<h3>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+      <!-- RUAHA -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="images/ruaha-exact.jpg" alt="Elephants, baobab trees and a safari Land Cruiser in Ruaha National Park, Tanzania">
+
+        <span class="feature-icon">🐘</span>
+
+        <h3>
           Ruaha National Park
         </h3>
-<p>
+
+        <p>
           Discover vast wilderness, elephants, lions, giraffes,
           wild dogs and exceptional birdlife in one of Tanzania's
           great safari destinations.
         </p>
-<p>
-<strong>From US$1,200 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$1,200 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           3 Days / 2 Nights
         </p>
-<p>
-          Day 1 – Arrival and afternoon game drive<br/>
-          Day 2 – Full-day Ruaha safari<br/>
+
+        <p>
+          Day 1 – Arrival and afternoon game drive<br>
+          Day 2 – Full-day Ruaha safari<br>
           Day 3 – Morning game drive and departure
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Ruaha National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ruaha National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- NYERERE -->
-<article class="feature-card">
-<img alt="Boat safari on the Rufiji River in Nyerere National Park, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TZ_Selous_Water_Safari.JPG"/>
-<span class="feature-icon">🦛</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- NYERERE -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Laika_ac_African_Wild_Dog_(9882202246)_cropped.jpg" alt="African wild dog in the former Selous Game Reserve, now Nyerere National Park area, Tanzania">
+
+        <span class="feature-icon">🦛</span>
+
+        <h3>
           Nyerere National Park
         </h3>
-<p>
+
+        <p>
           Experience river-based and land safaris with elephants,
           hippos, crocodiles, giraffes and abundant birdlife.
         </p>
-<p>
-<strong>From US$1,100 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$1,100 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           3 Days / 2 Nights
         </p>
-<p>
-          Day 1 – Arrival and boat safari<br/>
-          Day 2 – Full-day game drive<br/>
+
+        <p>
+          Day 1 – Arrival and boat safari<br>
+          Day 2 – Full-day game drive<br>
           Day 3 – Morning activity and departure
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Nyerere National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Nyerere National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- MIKUMI -->
-<article class="feature-card">
-<img alt="Lion in Mikumi National Park, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Male_Lion_-_Mikumi_National_Park_-_Tanzania_-_03_(8892780294).jpg"/>
-<span class="feature-icon">🦁</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- MIKUMI -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Male_Lion_-_Mikumi_National_Park_-_Tanzania_-_03_(8892780294).jpg" alt="Lion in Mikumi National Park, Tanzania">
+
+        <span class="feature-icon">🦁</span>
+
+        <h3>
           Mikumi National Park
         </h3>
-<p>
+
+        <p>
           A convenient Southern Tanzania safari destination
           offering opportunities to see lions, elephants,
           giraffes, zebras and many bird species.
         </p>
-<p>
-<strong>From US$650 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$650 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<p>
-          Day 1 – Travel and afternoon game drive<br/>
+
+        <p>
+          Day 1 – Travel and afternoon game drive<br>
           Day 2 – Morning game drive and departure
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Mikumi National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Mikumi National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- UDZUNGWA -->
-<article class="feature-card">
-<img alt="Sanje Falls in Udzungwa Mountains National Park, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg"/>
-<span class="feature-icon">🌿</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- UDZUNGWA -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg" alt="Sanje Falls in Udzungwa Mountains National Park, Tanzania">
+
+        <span class="feature-icon">🌿</span>
+
+        <h3>
           Udzungwa Mountains
         </h3>
-<p>
+
+        <p>
           Explore mountain forests, waterfalls, endemic species
           and exceptional birdwatching opportunities.
         </p>
-<p>
-<strong>From US$650 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$650 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<p>
-          Day 1 – Arrival and forest experience<br/>
+
+        <p>
+          Day 1 – Arrival and forest experience<br>
           Day 2 – Hiking, birdwatching and departure
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Udzungwa Mountains"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Udzungwa Mountains">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-</div>
-</div>
+          </form>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- SOUTHERN TANZANIA COMBINATION -->
 <!-- ================================================= -->
+
 <section class="section section-cream">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow dark">
+
+  <div class="container">
+
+    <div class="section-heading centered">
+
+      <p class="eyebrow dark">
         Tailor-Made Southern Safari
       </p>
-<h2>
+
+      <h2>
         Southern Tanzania Safari Circuit
       </h2>
-<p>
+
+      <p>
         Combine two or more Southern Tanzania destinations
         into a longer tailor-made safari.
       </p>
-</div>
-<div class="feature-grid">
-<article class="feature-card">
-<div aria-label="Ruaha elephants and African wild dog in Nyerere" class="tour-image tour-combo-image" role="img">
-<div aria-label="Nyerere boat safari and African wild dog" class="tour-image tour-combo-image" role="img"><img alt="Boat safari on the Rufiji River in Nyerere National Park, Tanzania" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TZ_Selous_Water_Safari.JPG"/><img alt="African wild dog in a Tanzanian safari landscape" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Wild_dog_(5157809245).jpg"/></div>
-</div>
-<span class="feature-icon">🌍</span>
-<h3>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Giraffe_at_Nyerere_National_Park.jpg" alt="Giraffe beside the Rufiji landscape in Nyerere National Park, Tanzania">
+
+        <span class="feature-icon">🌍</span>
+
+        <h3>
           Ruaha + Nyerere
         </h3>
-<p>
+
+        <p>
           Combine the wilderness of Ruaha with the rivers,
           lakes and wildlife experiences of Nyerere National Park.
         </p>
-<p>
-<strong>From US$1,900 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$1,900 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           5 Days / 4 Nights
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Ruaha + Nyerere"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ruaha + Nyerere">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<img alt="Lilac-breasted roller in Nyerere National Park, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nyerere_National_Park_(187).jpg"/>
-<span class="feature-icon">🐦</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nyerere_National_Park_(187).jpg" alt="Lilac-breasted roller in Nyerere National Park, Tanzania">
+
+        <span class="feature-icon">🐦</span>
+
+        <h3>
           Southern Tanzania Birdwatching
         </h3>
-<p>
+
+        <p>
           A tailor-made birdwatching journey designed around
           Southern Tanzania's diverse habitats and birdlife.
         </p>
-<p>
-<strong>Price: Tailor-made</strong>
-</p>
-<p>
+
+        <p>
+          <strong>Price: Tailor-made</strong>
+        </p>
+
+        <p>
           Duration and itinerary depend on your birdwatching
           interests and preferred destinations.
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Southern Tanzania Birdwatching"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Southern Tanzania Birdwatching">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<div class="photo-wrap"><img alt="Safari vehicle experience in the Selous landscape of Southern Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TZ_Selous_Auto_Safari.JPG"/><span class="photo-badge">Tailor-made • Southern Tanzania</span></div>
-<span class="feature-icon">🦒</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <div class="photo-wrap"><img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TZ_Selous_Auto_Safari.JPG" alt="Safari vehicle experience in the Selous landscape of Southern Tanzania"><span class="photo-badge">Tailor-made • Southern Tanzania</span></div>
+
+        <span class="feature-icon">🦒</span>
+
+        <h3>
           Custom Southern Safari
         </h3>
-<p>
+
+        <p>
           Tell us your preferred dates, interests and budget.
           We will design a Southern Tanzania safari around you.
         </p>
-<p>
-<strong>Price: Tailor-made</strong>
-</p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Custom Southern Safari"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+        <p>
+          <strong>Price: Tailor-made</strong>
+        </p>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Custom Southern Safari">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-</div>
-</div>
+          </form>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- NORTHERN TANZANIA — ADDITIONAL SERVICE -->
 <!-- ================================================= -->
+
 <section class="section">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow dark">
+
+  <div class="container">
+
+    <div class="section-heading centered">
+
+      <p class="eyebrow dark">
         Additional Tanzania Experiences
       </p>
-<h2>
+
+      <h2>
         Northern Tanzania Safaris
       </h2>
-<p>
+
+      <p>
         Southern Tanzania is our specialty. We also arrange
         tailor-made safaris to Northern Tanzania's famous
         wildlife destinations.
       </p>
-</div>
-<div class="feature-grid">
-<!-- SERENGETI -->
-<article class="feature-card">
-<img alt="Lion in Serengeti National Park, Tanzania" class="tour-image" src="images/serengeti-lion.jpg"/>
-<span class="feature-icon">🦁</span>
-<h3>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+      <!-- SERENGETI -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="images/serengeti-lion-user.jpg" alt="Lion in Serengeti National Park, Tanzania">
+
+        <span class="feature-icon">🦁</span>
+
+        <h3>
           Serengeti National Park
         </h3>
-<p>
+
+        <p>
           Experience the legendary Serengeti plains, abundant
           wildlife and, depending on the season, the Great Migration.
         </p>
-<p>
-<strong>From US$1,400 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$1,400 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           4 Days / 3 Nights
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Serengeti National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Serengeti National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- NGORONGORO -->
-<article class="feature-card">
-<img alt="Ngorongoro Crater, Tanzania — panoramic crater view" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngorongoro_crater,_Tanzania.jpg"/>
-<span class="feature-icon">🏞️</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- NGORONGORO -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngorongoro_crater,_Tanzania.jpg" alt="Ngorongoro Crater, Tanzania — panoramic crater view">
+
+        <span class="feature-icon">🏞️</span>
+
+        <h3>
           Ngorongoro Crater
         </h3>
-<p>
+
+        <p>
           Explore one of Northern Tanzania's most famous
           wildlife destinations, with spectacular scenery and
           a remarkable concentration of wildlife.
         </p>
-<p>
-<strong>From US$850 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$850 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Ngorongoro Crater"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Ngorongoro Crater">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- TARANGIRE -->
-<article class="feature-card">
-<img alt="Baobab trees and wildlife in Tarangire National Park, Tanzania" class="tour-image" src="images/tarangire-baobab.jpg"/>
-<span class="feature-icon">🐘</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- TARANGIRE -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="images/tarangire-baobab-user.jpg" alt="Baobab trees and savanna in Tarangire National Park, Tanzania">
+
+        <span class="feature-icon">🐘</span>
+
+        <h3>
           Tarangire National Park
         </h3>
-<p>
+
+        <p>
           Discover elephants, baobabs and diverse wildlife
           across the beautiful Tarangire landscape.
         </p>
-<p>
-<strong>From US$850 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$850 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Tarangire National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Tarangire National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- MANYARA -->
-<article class="feature-card">
-<img alt="Flamingos and wildlife at Lake Manyara, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lakeshore_and_wildlife,_Lake_Manyara_National_Park_(2015).jpg"/>
-<span class="feature-icon">🦩</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- MANYARA -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lakeshore_and_wildlife,_Lake_Manyara_National_Park_(2015).jpg" alt="Flamingos and wildlife at Lake Manyara, Tanzania">
+
+        <span class="feature-icon">🦩</span>
+
+        <h3>
           Lake Manyara National Park
         </h3>
-<p>
+
+        <p>
           Explore a diverse park known for its lake, forests,
           wildlife and birdlife.
         </p>
-<p>
-<strong>From US$850 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$850 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Lake Manyara National Park"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Lake Manyara National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<!-- NORTHERN CIRCUIT -->
-<article class="feature-card">
-<img alt="Safari vehicle in Serengeti National Park, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_tourism_vehicle_heading_to_Serengeti_national_park.jpg"/>
-<span class="feature-icon">🌍</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <!-- NORTHERN CIRCUIT -->
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_tourism_vehicle_heading_to_Serengeti_national_park.jpg" alt="Safari vehicle in Serengeti National Park, Tanzania">
+
+        <span class="feature-icon">🌍</span>
+
+        <h3>
           Northern Tanzania Circuit
         </h3>
-<p>
+
+        <p>
           Combine Serengeti, Ngorongoro, Tarangire and Lake
           Manyara into a customized Northern Tanzania safari.
         </p>
-<p>
-<strong>From US$1,900 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$1,900 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           6 Days / 5 Nights
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Northern Tanzania Circuit"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Northern Tanzania Circuit">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-</div>
-<div class="section-heading centered">
-<p>
-<strong>Northern Tanzania destinations:</strong>
+          </form>
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="section-heading centered">
+
+      <p>
+
+        <strong>Northern Tanzania destinations:</strong>
 
         Serengeti National Park •
         Ngorongoro Crater •
@@ -611,369 +829,547 @@ function translatePage(lang){
         Lake Manyara National Park
 
       </p>
-</div>
-<div class="hero-actions">
-<a class="btn btn-primary" href="booking.html">
+
+    </div>
+
+
+    <div class="hero-actions">
+
+      <a
+        class="btn btn-primary"
+        href="booking.html"
+      >
         Plan Northern Safari
       </a>
-</div>
-</div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- ZANZIBAR -->
 <!-- ================================================= -->
+
 <section class="section section-cream">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow dark">
-        Beach &amp; Island Experiences
+
+  <div class="container">
+
+    <div class="section-heading centered">
+
+      <p class="eyebrow dark">
+        Beach & Island Experiences
       </p>
-<h2>
+
+      <h2>
         Zanzibar
       </h2>
-<p>
+
+      <p>
         Extend your Tanzania adventure with a relaxing
         Zanzibar beach and cultural experience.
       </p>
-</div>
-<div class="feature-grid">
-<article class="feature-card">
-<div aria-label="Zanzibar beach, Tanzania" class="safari-zanzibar-visual" role="img"><img alt="Zanzibar beach, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg"/></div>
-<span class="feature-icon">🏝️</span>
-<h3>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <article class="feature-card">
+
+        <div class="safari-zanzibar-visual" role="img" aria-label="Zanzibar beach experience">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg" alt="Zanzibar beach, Tanzania">
+        </div>
+
+        <span class="feature-icon">🏝️</span>
+
+        <h3>
           Zanzibar Beach Escape
         </h3>
-<p>
+
+        <p>
           Enjoy beautiful beaches, warm Indian Ocean waters
           and a relaxed island atmosphere.
         </p>
-<p>
-<strong>From US$650 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$650 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           4 Days / 3 Nights
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Zanzibar Beach Escape"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Zanzibar Beach Escape">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<img alt="Stone Town, Zanzibar, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Zanzibar_StoneTown.png"/>
-<span class="feature-icon">🏛️</span>
-<h3>
-          Stone Town &amp; Culture
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_Town_of_Zanzibar-108834.jpg" alt="Stone Town, Zanzibar, Tanzania">
+
+        <span class="feature-icon">🏛️</span>
+
+        <h3>
+          Stone Town & Culture
         </h3>
-<p>
+
+        <p>
           Discover Stone Town's history, architecture,
           markets and rich cultural heritage.
         </p>
-<p>
-<strong>From US$250 pp</strong>
-</p>
-<p>
-<strong>Suggested itinerary:</strong><br/>
+
+        <p>
+          <strong>From US$250 pp</strong>
+        </p>
+
+        <p>
+          <strong>Suggested itinerary:</strong><br>
           2 Days / 1 Night
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Stone Town &amp; Culture"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Stone Town &amp; Culture">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<div aria-label="Safari Land Cruiser and Zanzibar beach experience" class="safari-zanzibar-visual tour-combo-image" role="img"><img alt="Safari Land Cruiser and elephants in Southern Tanzania" class="tour-image" src="images/ruaha-elephants-baobab-landcruiser.jpg"/><img alt="Zanzibar beach, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg"/></div>
-<span class="feature-icon">🌴</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <div class="safari-zanzibar-visual" role="img" aria-label="Safari Land Cruiser and Zanzibar beach experience">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Serengeti_4_(14514006600).jpg" alt="Safari Land Cruiser and wildlife experience in Tanzania">
+          <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg" alt="Zanzibar beach, Tanzania">
+        </div>
+
+        <span class="feature-icon">🌴</span>
+
+        <h3>
           Safari + Zanzibar
         </h3>
-<p>
+
+        <p>
           Combine a Tanzania wildlife safari with a relaxing
           Zanzibar island experience.
         </p>
-<p>
-<strong>From US$2,200 pp</strong>
-</p>
-<p>
+
+        <p>
+          <strong>From US$2,200 pp</strong>
+        </p>
+
+        <p>
           Duration and itinerary are tailor-made.
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Safari + Zanzibar"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Safari + Zanzibar">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-</div>
-</div>
+          </form>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- CITY & CULTURAL TOURS -->
 <!-- ================================================= -->
+
 <section class="section">
-<div class="container">
-<div class="section-heading centered">
-<p class="eyebrow dark">
+
+  <div class="container">
+
+    <div class="section-heading centered">
+
+      <p class="eyebrow dark">
         Local Experiences
       </p>
-<h2>
-        City &amp; Cultural Tours
+
+      <h2>
+        City & Cultural Tours
       </h2>
-<p>
+
+      <p>
         Experience Tanzania beyond the national parks through
         city tours, culture, history and local communities.
       </p>
-</div>
-<div class="feature-grid">
-<article class="feature-card">
-<img alt="Dar es Salaam city, Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dar_es_salaam_City.jpg"/>
-<span class="feature-icon">🏙️</span>
-<h3>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dar_es_salaam_City.jpg" alt="Dar es Salaam city, Tanzania">
+
+        <span class="feature-icon">🏙️</span>
+
+        <h3>
           Dar es Salaam City Tour
         </h3>
-<p>
+
+        <p>
           Explore Dar es Salaam's history, markets, coastline,
           local culture and important landmarks.
         </p>
-<p>
-<strong>From US$100 pp</strong>
-</p>
-<p>
-<strong>Duration:</strong>
+
+        <p>
+          <strong>From US$100 pp</strong>
+        </p>
+
+        <p>
+          <strong>Duration:</strong>
           Full day
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Dar es Salaam City Tour"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Dar es Salaam City Tour">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<img alt="Maasai community welcoming visitors in Tanzania" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Maasai_Tribe.jpg"/>
-<span class="feature-icon">🤝</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Maasai_Tribe.jpg" alt="Maasai community welcoming visitors in Tanzania">
+
+        <span class="feature-icon">🤝</span>
+
+        <h3>
           Cultural Tour
         </h3>
-<p>
+
+        <p>
           Meet local communities and experience traditional
           culture, food, crafts and everyday life.
         </p>
-<p>
-<strong>From US$120 pp</strong>
-</p>
-<p>
+
+        <p>
+          <strong>From US$120 pp</strong>
+        </p>
+
+        <p>
           Duration depends on the selected experience.
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Cultural Tour"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Cultural Tour">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-<article class="feature-card">
-<img alt="Walking safari experience in Africa" class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking_Safari.jpg"/>
-<span class="feature-icon">🥾</span>
-<h3>
+          </form>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking_Safari.jpg" alt="Walking safari experience in Africa">
+
+        <span class="feature-icon">🥾</span>
+
+        <h3>
           Walking Experience
         </h3>
-<p>
+
+        <p>
           Discover Tanzania on foot with nature walks,
           cultural walks and guided local experiences.
         </p>
-<p>
-<strong>Price on request</strong> — walking costs vary by location,
+
+        <p>
+          <strong>Price on request</strong> — walking costs vary by location,
           conservation/park fees, guide requirements and transport.
         </p>
-<p>
+
+        <p>
           We arrange the required transport to and from the walking area or national park,
           with park fees and permits quoted clearly before confirmation.
         </p>
-<div class="itinerary-booking">
-<h4>Book This Safari</h4>
-<form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
-<input name="safari" type="hidden" value="Walking Experience"/>
-<div class="booking-fields">
-<input name="name" placeholder="Your name" required="" type="text"/>
-<input name="whatsapp" placeholder="WhatsApp number" type="tel"/>
-<input name="email" placeholder="Email address" type="email"/>
-<input aria-label="Preferred travel date" name="travel_date" required="" type="date"/>
-<input min="1" name="travellers" placeholder="Travellers" required="" type="number"/>
+
+      
+        <div class="itinerary-booking">
+          <h4>Book This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Walking Experience">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-email">Book via Email</button>
 </div>
-<textarea name="message" placeholder="Tell us about your safari" rows="3"></textarea>
-<div class="booking-options">
-<button class="btn btn-primary" name="booking_method" type="submit" value="whatsapp">Book via WhatsApp</button>
-<button class="btn btn-email" name="booking_method" type="submit" value="email">Book via Email</button>
-</div>
-</form>
-</div>
-</article>
-</div>
-</div>
+          </form>
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- TAILOR-MADE -->
 <!-- ================================================= -->
+
 <section class="cta-section">
-<div class="container">
-<div class="cta-inner">
-<div>
-<p class="eyebrow">
+
+  <div class="container">
+
+    <div class="cta-inner">
+
+      <div>
+
+        <p class="eyebrow">
           Your Journey, Your Way
         </p>
-<h2>
+
+        <h2>
           Tailor-Made Tanzania Safaris
         </h2>
-<p>
+
+        <p>
           Have a special destination, budget, number of days
           or wildlife interest? We can create a journey around you.
         </p>
-</div>
-<div class="hero-actions">
-<a class="btn btn-primary" href="booking.html">
+
+      </div>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="booking.html"
+          class="btn btn-primary"
+        >
           Start Planning
         </a>
-<a class="btn btn-outline" href="contact.html">
+
+        <a
+          href="contact.html"
+          class="btn btn-outline"
+        >
           Contact Us
         </a>
-</div>
-</div>
-</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
 <!-- ================================================= -->
 <!-- FOOTER -->
 <!-- ================================================= -->
+
 <footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div>
-<h3>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>
           Birds and Environment Safaris
         </h3>
-<p>
+
+        <p>
           Authentic wildlife safaris, birdwatching,
           cultural experiences and responsible tourism
           across Tanzania.
         </p>
-</div>
-<div>
-<h3>
+
+      </div>
+
+
+      <div>
+
+        <h3>
           Explore
         </h3>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="tours.html">Tours</a>
-<a href="gallery.html">Gallery</a>
-</div>
-<div>
-<h3>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="tours.html">Tours</a>
+
+        <a href="gallery.html">Gallery</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
           Experiences
         </h3>
-<a href="booking.html">
+
+        <a href="booking.html">
           Book a Safari
         </a>
-<a href="contact.html">
+
+        <a href="contact.html">
           Contact
         </a>
-<a href="community.html">
+
+        <a href="community.html">
           Community
         </a>
-</div>
-<div>
-<h3>
+
+      </div>
+
+
+      <div>
+
+        <h3>
           Contact
         </h3>
-<span>
+
+        <span>
           Tabata, Chang'ombe
         </span>
-<span>
+
+        <span>
           Dar es Salaam, Tanzania
         </span>
-<a href="mailto:birdsandenvironment@outlook.com">
+
+        <a href="mailto:birdsandenvironment@outlook.com">
           birdsandenvironment@outlook.com
         </a>
-<a href="https://wa.me/255716108475">
+
+        <a href="https://wa.me/255716108475">
           WhatsApp: +255 716 108 475
         </a>
-</div>
-</div>
-<div class="footer-bottom">
-<div class="container">
-<span>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <span>
           © 2026 Birds and Environment Safaris
         </span>
-<span>
+
+        <span>
           Explore • Respect • Conserve
         </span>
-</div>
-</div>
-</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </footer>
+
+
+
 <style>
 .itinerary-booking{margin-top:1.25rem;padding:1.1rem;border-radius:12px;background:rgba(0,0,0,.035)}
 .itinerary-booking h4{margin:0 0 .8rem}
@@ -1037,11 +1433,14 @@ function sendItineraryBooking(event, form){
   }
 }
 </script>
+
+
 <section class="section photo-credits">
-<div class="container">
-<p><strong>Photo credits:</strong> Destination and experience photographs are sourced from Wikimedia Commons and used under their stated Creative Commons or public-domain licences. Individual credits are listed in the image source pages.</p>
-</div>
+  <div class="container">
+    <p><strong>Photo credits:</strong> Destination and experience photographs are sourced from Wikimedia Commons and used under their stated Creative Commons or public-domain licences. Individual credits are listed in the image source pages.</p>
+  </div>
 </section>
+
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>
 </body>
 </html>
