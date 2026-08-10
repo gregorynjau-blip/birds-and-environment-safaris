@@ -52,9 +52,20 @@
 </header>
 
 <!-- LANGUAGE + LIVE VISITOR TOOLS -->
-<div class="site-tools" aria-label="Language and live visitor information">
+<div class="site-tools" aria-label="Language, visitor count and guests online">
   <div class="site-tools-inner">
-    <div class="translate-box"><span>Language:</span><div id="google_translate_element"></div></div>
+    <div class="language-flags" aria-label="Choose language">
+      <span class="language-label">Languages:</span>
+      <button type="button" onclick="translatePage('en')" title="English">🇬🇧 English</button>
+      <button type="button" onclick="translatePage('es')" title="Spanish">🇪🇸 Español</button>
+      <button type="button" onclick="translatePage('it')" title="Italian">🇮🇹 Italiano</button>
+      <button type="button" onclick="translatePage('fr')" title="French">🇫🇷 Français</button>
+      <button type="button" onclick="translatePage('de')" title="German">🇩🇪 Deutsch</button>
+      <button type="button" onclick="translatePage('nl')" title="Dutch">🇳🇱 Nederlands</button>
+      <button type="button" onclick="translatePage('zh-CN')" title="Chinese">🇨🇳 中文</button>
+      <button type="button" onclick="translatePage('ja')" title="Japanese">🇯🇵 日本語</button>
+      <button type="button" onclick="translatePage('sv')" title="Swedish">🇸🇪 Svenska</button>
+    </div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
       <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
@@ -62,10 +73,11 @@
   </div>
 </div>
 <script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,it,fr,de,nl,zh-CN,ja,sv',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-<script>
+function translatePage(lang){
+  if(lang==='en'){ window.location.href=window.location.href.split('#')[0]; return; }
+  const url='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(window.location.href);
+  window.open(url,'_blank','noopener');
+}
 (function(){
   const today=document.getElementById('visitorsToday'), online=document.getElementById('guestsOnline');
   if(!today||!online)return;
@@ -75,6 +87,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
     .catch(()=>{today.textContent='—';online.textContent='—';});
 })();
 </script>
+
 
 
 
@@ -132,7 +145,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ruaha_National_Park.jpg" alt="Elephants in Ruaha National Park, Tanzania">
+        <img class="tour-image" src="images/ruaha-elephants-baobab-landcruiser.jpg" alt="Elephants, baobab trees and a safari Land Cruiser in Ruaha National Park, Tanzania">
 
         <span class="feature-icon">🐘</span>
 
@@ -298,7 +311,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg" alt="Sanje Falls trail in Udzungwa Mountains National Park">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg" alt="Sanje Falls in Udzungwa Mountains National Park, Tanzania">
 
         <span class="feature-icon">🌿</span>
 
@@ -432,7 +445,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/African_Fish_Eagle,_Selous_Reserve,_Tanzania_(43869603321).jpg" alt="African fish eagle in the Selous landscape of Southern Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nyerere_National_Park_(187).jpg" alt="Lilac-breasted roller in Nyerere National Park, Tanzania">
 
         <span class="feature-icon">🐦</span>
 
@@ -479,7 +492,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Safari_in_Ngorongoro.jpg" alt="Safari vehicles with guests in the Ngorongoro landscape, Tanzania">
+        <div class="photo-wrap"><img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TZ_Selous_Auto_Safari.JPG" alt="Safari vehicle experience in the Selous landscape of Southern Tanzania"><span class="photo-badge">Tailor-made • Southern Tanzania</span></div>
 
         <span class="feature-icon">🦒</span>
 
@@ -559,7 +572,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lion_In_Serengeti_National_Park.jpg" alt="Lion in Serengeti National Park, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lion,_Serengeti_National_Park_(48788336273).jpg" alt="Lion in Serengeti National Park, Tanzania">
 
         <span class="feature-icon">🦁</span>
 
@@ -608,7 +621,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngorongoro_Crater,_Tanzania_(2289112850).jpg" alt="Ngorongoro Crater, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngorongoro_crater_Tanzania.jpg" alt="Ngorongoro Crater, Tanzania">
 
         <span class="feature-icon">🏞️</span>
 
@@ -658,7 +671,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Elephants,_Tarangire_National_Park,_Tanzania.jpg" alt="Elephants in Tarangire National Park, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tree-climbing_lion.jpg" alt="Tree-climbing lion in Tarangire National Park, Tanzania">
 
         <span class="feature-icon">🐘</span>
 
@@ -707,7 +720,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lake_Manyara.jpg" alt="Lake Manyara, Northern Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lake_Manyara_National_Park_0001.jpg" alt="Lake Manyara, Northern Tanzania">
 
         <span class="feature-icon">🦩</span>
 
@@ -756,7 +769,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tanzania_(Serengeti_National_Park)_Safari_vehicle_(21113135729).jpg" alt="Safari vehicle in Serengeti National Park, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A_tourism_vehicle_heading_to_Serengeti_national_park.jpg" alt="Safari vehicle in Serengeti National Park, Tanzania">
 
         <span class="feature-icon">🌍</span>
 
@@ -866,7 +879,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Zanzibar_Beach.JPG" alt="Zanzibar beach, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg" alt="Zanzibar beach, Tanzania">
 
         <span class="feature-icon">🏝️</span>
 
@@ -913,7 +926,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_Town,_Zanzibar_(1).jpg" alt="Stone Town, Zanzibar, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Zanzibar_StoneTown.png" alt="Stone Town, Zanzibar, Tanzania">
 
         <span class="feature-icon">🏛️</span>
 
@@ -960,7 +973,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Zanzibar_Beach.JPG" alt="Zanzibar beach, Tanzania">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg" alt="Zanzibar beach, Tanzania">
 
         <span class="feature-icon">🌴</span>
 
@@ -1041,7 +1054,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
-        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg" alt="Sanje Falls trail in Udzungwa Mountains National Park">
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dar_es_salaam_City.jpg" alt="Dar es Salaam city, Tanzania">
 
         <span class="feature-icon">🏙️</span>
 
@@ -1088,6 +1101,8 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
       <article class="feature-card">
 
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Maasai_Tribe.jpg" alt="Maasai community welcoming visitors in Tanzania">
+
         <span class="feature-icon">🤝</span>
 
         <h3>
@@ -1131,6 +1146,8 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 
 
       <article class="feature-card">
+
+        <img class="tour-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking_Safari.jpg" alt="Walking safari experience in Africa">
 
         <span class="feature-icon">🥾</span>
 
@@ -1413,7 +1430,7 @@ function sendItineraryBooking(event, form){
 
 <section class="section photo-credits">
   <div class="container">
-    <p><strong>Photo credits:</strong> Selected destination photographs are sourced from Wikimedia Commons under their respective Creative Commons/public-domain licences. Credits: Pius Mahimbi (Ruaha); Rwebogora (Nyerere); Adam Jones (Mikumi); Wikimedia Commons contributors for Udzungwa, Serengeti, Ngorongoro, Tarangire, Lake Manyara, Zanzibar and safari-vehicle photographs.</p>
+    <p><strong>Photo credits:</strong> Destination and experience photographs are sourced from Wikimedia Commons and used under their stated Creative Commons or public-domain licences. Individual credits are listed in the image source pages.</p>
   </div>
 </section>
 
