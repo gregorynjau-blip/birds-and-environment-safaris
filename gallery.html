@@ -12,15 +12,15 @@
   <div class="site-tools-inner">
     <div class="language-flags" aria-label="Choose language">
       <span class="language-label">Languages:</span>
-      <button type="button" onclick="translatePage('en')" title="English">🇬🇧 English</button>
-      <button type="button" onclick="translatePage('es')" title="Spanish">🇪🇸 Español</button>
-      <button type="button" onclick="translatePage('it')" title="Italian">🇮🇹 Italiano</button>
-      <button type="button" onclick="translatePage('fr')" title="French">🇫🇷 Français</button>
-      <button type="button" onclick="translatePage('de')" title="German">🇩🇪 Deutsch</button>
-      <button type="button" onclick="translatePage('nl')" title="Dutch">🇳🇱 Nederlands</button>
-      <button type="button" onclick="translatePage('zh-CN')" title="Chinese">🇨🇳 中文</button>
-      <button type="button" onclick="translatePage('ja')" title="Japanese">🇯🇵 日本語</button>
-      <button type="button" onclick="translatePage('sv')" title="Swedish">🇸🇪 Svenska</button>
+      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><img src="images/flags/gb.svg" alt="English flag"> <span>English</span></button>
+      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><img src="images/flags/es.svg" alt="Español flag"> <span>Español</span></button>
+      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><img src="images/flags/it.svg" alt="Italiano flag"> <span>Italiano</span></button>
+      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><img src="images/flags/fr.svg" alt="Français flag"> <span>Français</span></button>
+      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><img src="images/flags/de.svg" alt="Deutsch flag"> <span>Deutsch</span></button>
+      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><img src="images/flags/nl.svg" alt="Nederlands flag"> <span>Nederlands</span></button>
+      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><img src="images/flags/cn.svg" alt="中文 flag"> <span>中文</span></button>
+      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><img src="images/flags/jp.svg" alt="日本語 flag"> <span>日本語</span></button>
+      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><img src="images/flags/se.svg" alt="Svenska flag"> <span>Svenska</span></button>
     </div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
@@ -52,7 +52,18 @@ function translatePage(lang){
 <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ruaha_National_Park.jpg" alt="Giraffe in Ruaha" loading="lazy" onerror="this.style.display='none'"><figcaption>Wildlife in Ruaha</figcaption></figure>
 <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Male_Lion_-_Mikumi_National_Park_-_Tanzania_-_03_(8892780294).jpg" alt="Lion in Mikumi" loading="lazy" onerror="this.style.display='none'"><figcaption>Wildlife encounters</figcaption></figure>
 <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/African_Fish_Eagle,_Selous_Reserve,_Tanzania_(43869603321).jpg" alt="Birdwatching in Tanzania" loading="lazy" onerror="this.style.display='none'"><figcaption>Birdwatching</figcaption></figure>
-</div><div class="card" style="margin-top:30px"><h3>More photographs coming soon</h3><p>We are expanding this gallery with more original safari and birdwatching images. Every photograph will include useful context and accessible alt text.</p></div></div></section>
+</div>
+<div class="gallery-grid gallery-grid-more">
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ngorongoro_Crater_(4).jpg" alt="Panoramic view into Ngorongoro Crater from the rim" loading="lazy"><figcaption>Ngorongoro Crater</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lilac_breasted_roller_in_Tanzania_2677_Nevit.jpg" alt="Lilac-breasted roller in Tanzania" loading="lazy"><figcaption>Birdwatching in Tanzania</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Laika_ac_African_Wild_Dog_(9882202246)_cropped.jpg" alt="African wild dog in Southern Tanzania" loading="lazy"><figcaption>African wild dogs</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Baobab_Tree_in_Tarangire_National_Park.jpg" alt="Baobab tree in Tarangire National Park" loading="lazy"><figcaption>Tarangire baobabs</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stone_town_-Zanzibar.jpg" alt="Stone Town Zanzibar" loading="lazy"><figcaption>Stone Town, Zanzibar</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/ZanzibarBeach.jpg" alt="Zanzibar beach" loading="lazy"><figcaption>Zanzibar beach</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Dar_es_salaam_City.jpg" alt="Dar es Salaam city, Tanzania" loading="lazy"><figcaption>Dar es Salaam</figcaption></figure>
+<figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking_Safari.jpg" alt="Walking safari experience" loading="lazy"><figcaption>Walking safari</figcaption></figure>
+</div>
+<div class="card" style="margin-top:30px"><h3>Tanzania through the lens</h3><p>Wildlife, landscapes, birdlife, culture and safari experiences from Southern Tanzania and selected journeys across the country.</p></div></div></section>
 <section class="footer-cta"><div class="container cta"><h2>Want to experience these places yourself?</h2><a class="btn btn-light" href="booking.html">Plan Your Safari</a></div></section>
 </main>
 <footer class="site-footer"><div class="container grid grid-3"><div><h3>Birds &amp; Environment Safaris</h3><p>Explore • Respect • Conserve</p><p>Southern Tanzania wildlife and birdwatching journeys.</p></div><div><h3>Explore</h3><p><a href="tours.html">Tours</a><br><a href="gallery.html">Gallery</a><br><a href="travel-guide.html">Travel Guide</a><br><a href="faq.html">FAQ</a></p></div><div><h3>Contact</h3><p><a href="https://wa.me/255716108475">WhatsApp</a><br><a href="mailto:birdsandenvironment@outlook.com">Email</a><br>Dar es Salaam, Tanzania</p></div></div></footer>

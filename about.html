@@ -40,15 +40,15 @@
   <div class="site-tools-inner">
     <div class="language-flags" aria-label="Choose language">
       <span class="language-label">Languages:</span>
-      <button type="button" onclick="translatePage('en')" title="English">🇬🇧 English</button>
-      <button type="button" onclick="translatePage('es')" title="Spanish">🇪🇸 Español</button>
-      <button type="button" onclick="translatePage('it')" title="Italian">🇮🇹 Italiano</button>
-      <button type="button" onclick="translatePage('fr')" title="French">🇫🇷 Français</button>
-      <button type="button" onclick="translatePage('de')" title="German">🇩🇪 Deutsch</button>
-      <button type="button" onclick="translatePage('nl')" title="Dutch">🇳🇱 Nederlands</button>
-      <button type="button" onclick="translatePage('zh-CN')" title="Chinese">🇨🇳 中文</button>
-      <button type="button" onclick="translatePage('ja')" title="Japanese">🇯🇵 日本語</button>
-      <button type="button" onclick="translatePage('sv')" title="Swedish">🇸🇪 Svenska</button>
+      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><img src="images/flags/gb.svg" alt="English flag"> <span>English</span></button>
+      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><img src="images/flags/es.svg" alt="Español flag"> <span>Español</span></button>
+      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><img src="images/flags/it.svg" alt="Italiano flag"> <span>Italiano</span></button>
+      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><img src="images/flags/fr.svg" alt="Français flag"> <span>Français</span></button>
+      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><img src="images/flags/de.svg" alt="Deutsch flag"> <span>Deutsch</span></button>
+      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><img src="images/flags/nl.svg" alt="Nederlands flag"> <span>Nederlands</span></button>
+      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><img src="images/flags/cn.svg" alt="中文 flag"> <span>中文</span></button>
+      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><img src="images/flags/jp.svg" alt="日本語 flag"> <span>日本語</span></button>
+      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><img src="images/flags/se.svg" alt="Svenska flag"> <span>Svenska</span></button>
     </div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
@@ -332,46 +332,50 @@ function translatePage(lang){
 
       <div class="destination-grid">
 
-        <a href="tours.html" class="destination-card ruaha">
+        <a href="tours.html" class="destination-card ruaha" style="background-image:url('images/ruaha-elephants-baobab-landcruiser.jpg');">
 
           <span>Ruaha National Park</span>
 
           <small>
-            Wildlife • elephants • predators
+            Elephants • baobabs • lions • wild dogs
           </small>
+          <p class="destination-detail">Vast Ruaha landscapes with exceptional wildlife viewing, dramatic baobabs and strong birdlife.</p>
 
         </a>
 
 
-        <a href="tours.html" class="destination-card nyerere">
+        <a href="tours.html" class="destination-card nyerere" style="background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Laika_ac_African_Wild_Dog_(9882202246)_cropped.jpg');">
 
           <span>Nyerere National Park</span>
 
           <small>
-            River life • boat safaris • wildlife
+            Wild dogs • Rufiji River • boat safaris
           </small>
+          <p class="destination-detail">A huge southern wilderness known for river journeys, wildlife and some of Tanzania's best wild-dog country.</p>
 
         </a>
 
 
-        <a href="tours.html" class="destination-card mikumi">
+        <a href="tours.html" class="destination-card mikumi" style="background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Male_Lion_-_Mikumi_National_Park_-_Tanzania_-_03_(8892780294).jpg');">
 
           <span>Mikumi National Park</span>
 
           <small>
-            Wildlife • game drives • nature
+            Elephants • game drives • wildlife
           </small>
+          <p class="destination-detail">An accessible Southern Tanzania safari destination with open wildlife country and excellent game drives.</p>
 
         </a>
 
 
-        <a href="tours.html" class="destination-card udzungwa">
+        <a href="tours.html" class="destination-card udzungwa" style="background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Sanje_Falls.jpg');">
 
           <span>Udzungwa Mountains</span>
 
           <small>
-            Forest • hiking • endemic species
+            Forest • walking • waterfalls • birds
           </small>
+          <p class="destination-detail">Lush mountain forest, walking experiences, waterfalls and distinctive endemic wildlife.</p>
 
         </a>
 

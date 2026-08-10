@@ -28,15 +28,15 @@
   <div class="site-tools-inner">
     <div class="language-flags" aria-label="Choose language">
       <span class="language-label">Languages:</span>
-      <button type="button" onclick="translatePage('en')" title="English">🇬🇧 English</button>
-      <button type="button" onclick="translatePage('es')" title="Spanish">🇪🇸 Español</button>
-      <button type="button" onclick="translatePage('it')" title="Italian">🇮🇹 Italiano</button>
-      <button type="button" onclick="translatePage('fr')" title="French">🇫🇷 Français</button>
-      <button type="button" onclick="translatePage('de')" title="German">🇩🇪 Deutsch</button>
-      <button type="button" onclick="translatePage('nl')" title="Dutch">🇳🇱 Nederlands</button>
-      <button type="button" onclick="translatePage('zh-CN')" title="Chinese">🇨🇳 中文</button>
-      <button type="button" onclick="translatePage('ja')" title="Japanese">🇯🇵 日本語</button>
-      <button type="button" onclick="translatePage('sv')" title="Swedish">🇸🇪 Svenska</button>
+      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><img src="images/flags/gb.svg" alt="English flag"> <span>English</span></button>
+      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><img src="images/flags/es.svg" alt="Español flag"> <span>Español</span></button>
+      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><img src="images/flags/it.svg" alt="Italiano flag"> <span>Italiano</span></button>
+      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><img src="images/flags/fr.svg" alt="Français flag"> <span>Français</span></button>
+      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><img src="images/flags/de.svg" alt="Deutsch flag"> <span>Deutsch</span></button>
+      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><img src="images/flags/nl.svg" alt="Nederlands flag"> <span>Nederlands</span></button>
+      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><img src="images/flags/cn.svg" alt="中文 flag"> <span>中文</span></button>
+      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><img src="images/flags/jp.svg" alt="日本語 flag"> <span>日本語</span></button>
+      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><img src="images/flags/se.svg" alt="Svenska flag"> <span>Svenska</span></button>
     </div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
@@ -71,15 +71,15 @@ function translatePage(lang){
 <div class="section-heading centered">
 <p class="eyebrow dark">Safari Planning</p>
 <h2>Book a Safari</h2>
-<p>Complete the form below. Your request will open WhatsApp so we can respond directly.</p>
+<p>Complete the form below, then choose whether you would like to send your request by WhatsApp or email.</p>
 </div>
 <form class="main-booking-form" onsubmit="sendBooking(event)">
   <label for="name">Full name</label>
   <input id="name" name="name" required>
-  <label for="whatsapp">WhatsApp number</label>
-  <input id="whatsapp" name="whatsapp" type="tel" required>
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email">
+  <label for="whatsapp">WhatsApp number <span class="optional-label">(optional if using email)</span></label>
+  <input id="whatsapp" name="whatsapp" type="tel" placeholder="+255...">
+  <label for="email">Email address <span class="optional-label">(optional if using WhatsApp)</span></label>
+  <input id="email" name="email" type="email" placeholder="you@example.com">
   <label for="destination">Preferred destination</label>
   <select id="destination" name="destination" required>
     <option value="">Select your destination</option>
@@ -100,7 +100,10 @@ function translatePage(lang){
   <input id="travellers" name="travellers" type="number" min="1" required>
   <label for="message">Your safari plans / special requests</label>
   <textarea id="message" name="message" rows="5"></textarea>
-  <button type="submit" class="btn btn-primary">Send Booking Request on WhatsApp</button>
+  <div class="booking-options main-booking-options">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Send via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-outline">Send via Email</button>
+</div>
 </form>
 </div>
 </section>
@@ -115,8 +118,19 @@ if(safari){
 function sendBooking(event){
   event.preventDefault();
   const f=new FormData(event.target);
-  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+f.get('whatsapp'),'Email: '+(f.get('email')||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
-  window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+  const method=event.submitter ? event.submitter.value : 'email';
+  const whatsapp=(f.get('whatsapp')||'').trim();
+  const email=(f.get('email')||'').trim();
+  if(!whatsapp && !email){
+    alert('Please provide either a WhatsApp number or an email address.');
+    return;
+  }
+  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+(whatsapp||'Not provided'),'Email: '+(email||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
+  if(method==='email'){
+    window.location.href='mailto:birdsandenvironment@outlook.com?subject='+encodeURIComponent('Safari Booking Request - '+f.get('destination'))+'&body='+encodeURIComponent(msg);
+  }else{
+    window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank','noopener');
+  }
 }
 </script>
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>
