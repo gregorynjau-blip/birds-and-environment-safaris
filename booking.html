@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book a Safari | Birds and Environment Safaris</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+/* Final site-wide controls */
+.site-tools{display:block;width:100%;background:#f5efe3;border-bottom:1px solid rgba(0,0,0,.08);position:relative;z-index:20}
+.site-tools-inner{max-width:1200px;margin:0 auto;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.translate-box{display:flex;align-items:center;gap:8px;color:#23402d;font-size:.9rem}
+#languageSelect{padding:7px 30px 7px 10px;border:1px solid #b6a06b;border-radius:6px;background:#fff;color:#23402d;font:inherit}
+.activity-box{display:flex;gap:8px;flex-wrap:wrap}
+.activity-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #d8c8a4;color:#23402d;font-size:.82rem}
+.online-dot{width:8px;height:8px;border-radius:50%;background:#2b9b5b;display:inline-block;box-shadow:0 0 0 3px rgba(43,155,91,.12)}
+.booking-options .btn-outline{background:#d2ad4b!important;color:#1e2a1f!important;border-color:#b58e32!important;font-weight:700!important}
+.gift-card-section{padding:60px 0;background:#f5efe3}
+.gift-card-inner{max-width:1100px;margin:auto;padding:34px;border:1px solid #d2bd83;border-radius:18px;background:#fff;display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.gift-card-actions{display:flex;gap:12px;flex-wrap:wrap}
+.footer-social{display:flex;flex-direction:column;gap:7px}
+.footer-social h3{margin-bottom:5px}
+@media(max-width:700px){.gift-card-inner{flex-direction:column;align-items:flex-start}.site-tools-inner{align-items:flex-start}.activity-box{width:100%}}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -105,7 +124,167 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
   <input id="travellers" name="travellers" type="number" min="1" required>
   <label for="message">Your safari plans / special requests</label>
   <textarea id="message" name="message" rows="5"></textarea>
-  <button type="submit" class="btn btn-primary">Send Booking Request on WhatsApp</button>
+  <div class="booking-actions">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-gold">Book via Email</button>
+</div>
+</form>
+</div>
+</section>
+<script>
+const params=new URLSearchParams(location.search);
+const safari=params.get('safari');
+if(safari){
+  const d=document.getElementById('destination');
+  const option=[...d.options].find(o=>o.text.trim().toLowerCase()===safari.trim().toLowerCase());
+  if(option)d.value=option.value;
+}
+function sendBooking(event){
+  event.preventDefault();
+  const f=new FormData(event.target);
+  const method=f.get('booking_method');
+  const name=(f.get('name')||'').trim();
+  const whatsapp=(f.get('whatsapp')||'').trim();
+  const email=(f.get('email')||'').trim();
+  if(method==='whatsapp' && !whatsapp){ alert('Please enter your WhatsApp number.'); return; }
+  if(method==='email' && !email){ alert('Please enter your email address.'); return; }
+  const msg=['Safari Booking Request','Name: '+name,'WhatsApp: '+(whatsapp||'Not provided'),'Email: '+(email||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
+  if(method==='email'){
+    const subject='Safari Booking Request - '+f.get('destination');
+    window.location.href='mailto:birdsandenvironment@outlook.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(msg);
+  } else {
+    window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+  }
+}!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Safari | Birds and Environment Safaris</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* Final site-wide controls */
+.site-tools{display:block;width:100%;background:#f5efe3;border-bottom:1px solid rgba(0,0,0,.08);position:relative;z-index:20}
+.site-tools-inner{max-width:1200px;margin:0 auto;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.translate-box{display:flex;align-items:center;gap:8px;color:#23402d;font-size:.9rem}
+#languageSelect{padding:7px 30px 7px 10px;border:1px solid #b6a06b;border-radius:6px;background:#fff;color:#23402d;font:inherit}
+.activity-box{display:flex;gap:8px;flex-wrap:wrap}
+.activity-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #d8c8a4;color:#23402d;font-size:.82rem}
+.online-dot{width:8px;height:8px;border-radius:50%;background:#2b9b5b;display:inline-block;box-shadow:0 0 0 3px rgba(43,155,91,.12)}
+.booking-options .btn-outline{background:#d2ad4b!important;color:#1e2a1f!important;border-color:#b58e32!important;font-weight:700!important}
+.gift-card-section{padding:60px 0;background:#f5efe3}
+.gift-card-inner{max-width:1100px;margin:auto;padding:34px;border:1px solid #d2bd83;border-radius:18px;background:#fff;display:flex;justify-content:space-between;gap:30px;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+.gift-card-actions{display:flex;gap:12px;flex-wrap:wrap}
+.footer-social{display:flex;flex-direction:column;gap:7px}
+.footer-social h3{margin-bottom:5px}
+@media(max-width:700px){.gift-card-inner{flex-direction:column;align-items:flex-start}.site-tools-inner{align-items:flex-start}.activity-box{width:100%}}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('.site-nav').classList.toggle('open')">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tours.html">Tours</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="community.html">Community</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="nav-book active">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- LANGUAGE + LIVE VISITOR TOOLS -->
+<div class="site-tools" aria-label="Language and live visitor information">
+  <div class="site-tools-inner">
+    <div class="translate-box"><label for="languageSelect">Language:</label><select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="es">Español</option><option value="it">Italiano</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="nl">Nederlands</option><option value="zh-CN">中文</option><option value="ja">日本語</option><option value="sv">Svenska</option>
+    </select><div id="google_translate_element" aria-hidden="true"></div></div>
+    <div class="activity-box" aria-live="polite">
+      <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
+      <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
+    </div>
+  </div>
+</div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,it,fr,de,nl,zh-CN,ja,sv',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+<script>
+(function(){
+  function currentLang(){var m=document.cookie.match(/(?:^|; )googtrans=([^;]+)/); return m?decodeURIComponent(m[1]).split('/').pop():'en';}
+  function applySiteLanguage(code){
+    if(code==='en'){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; location.reload(); return;}
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=code; combo.dispatchEvent(new Event('change')); return;}
+    document.cookie='googtrans=/en/'+code+';path=/'; location.reload();
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var sel=document.getElementById('languageSelect'); if(!sel)return;
+    var lang=currentLang(); if([...sel.options].some(function(o){return o.value===lang;})) sel.value=lang;
+    sel.addEventListener('change',function(){applySiteLanguage(this.value);});
+  });
+})();
+</script>
+<script>
+(function(){
+  const today=document.getElementById('visitorsToday'), online=document.getElementById('guestsOnline');
+  if(!today||!online)return;
+  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris.com&format=json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():Promise.reject())
+    .then(d=>{today.textContent=(d.today&&d.today.uv!=null)?d.today.uv:'—';online.textContent=(d.realtime!=null)?d.realtime:'—';})
+    .catch(()=>{today.textContent='—';online.textContent='—';});
+})();
+</script>
+
+<section class="page-banner">
+  <p class="eyebrow">Explore • Respect • Conserve</p>
+  <h1>Plan Your Safari</h1>
+  <p>Tell us what you are looking for and we will help create your Tanzania safari.</p>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-heading centered">
+<p class="eyebrow dark">Safari Planning</p>
+<h2>Book a Safari</h2>
+<p>Complete the form below. Your request will open WhatsApp so we can respond directly.</p>
+</div>
+<form class="main-booking-form" onsubmit="sendBooking(event)">
+  <label for="name">Full name</label>
+  <input id="name" name="name" required>
+  <label for="whatsapp">WhatsApp number</label>
+  <input id="whatsapp" name="whatsapp" type="tel" required>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email">
+  <label for="destination">Preferred destination</label>
+  <select id="destination" name="destination" required>
+    <option value="">Select your destination</option>
+    <optgroup label="Southern Tanzania — Our Specialty">
+      <option>Ruaha National Park</option><option>Nyerere National Park</option><option>Mikumi National Park</option><option>Udzungwa Mountains</option>
+      <option>Southern Tanzania Birdwatching</option><option>Custom Southern Safari</option>
+    </optgroup>
+    <optgroup label="Northern Tanzania — Additional">
+      <option>Serengeti National Park</option><option>Ngorongoro Crater</option><option>Tarangire National Park</option><option>Lake Manyara National Park</option><option>Northern Tanzania Circuit</option>
+    </optgroup>
+    <optgroup label="Other Tanzania Experiences">
+      <option>Zanzibar Beach Escape</option><option>Stone Town & Culture</option><option>Safari + Zanzibar</option><option>Dar es Salaam City Tour</option><option>Cultural Tour</option><option>Walking Experience</option><option>Tailor-Made Journey</option>
+    </optgroup>
+  </select>
+  <label for="date">Preferred travel date</label>
+  <input id="date" name="date" type="date" required>
+  <label for="travellers">Number of travellers</label>
+  <input id="travellers" name="travellers" type="number" min="1" required>
+  <label for="message">Your safari plans / special requests</label>
+  <textarea id="message" name="message" rows="5"></textarea>
+  <div class="booking-actions">
+  <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Book via WhatsApp</button>
+  <button type="submit" name="booking_method" value="email" class="btn btn-gold">Book via Email</button>
+</div>
 </form>
 </div>
 </section>
@@ -125,5 +304,11 @@ function sendBooking(event){
 }
 </script>
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>
+<div class="footer-social">
+  <h3>Follow Us</h3>
+  <a href="https://www.facebook.com/BirdsAndEnvironment/" target="_blank" rel="noopener">Facebook</a>
+  <a href="https://www.instagram.com/birdsandenvironment/" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://x.com/birdsandenviro2" target="_blank" rel="noopener">X (Twitter)</a>
+</div>
 </body>
 </html>
