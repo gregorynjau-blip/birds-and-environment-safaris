@@ -71,13 +71,13 @@ function translatePage(lang){
 <div class="section-heading centered">
 <p class="eyebrow dark">Safari Planning</p>
 <h2>Book a Safari</h2>
-<p>Complete the form below. Your request will open WhatsApp so we can respond directly.</p>
+<p>Complete the form below, then choose whether to send your request by WhatsApp or email.</p>
 </div>
 <form class="main-booking-form" onsubmit="sendBooking(event)">
   <label for="name">Full name</label>
   <input id="name" name="name" required>
-  <label for="whatsapp">WhatsApp number</label>
-  <input id="whatsapp" name="whatsapp" type="tel" required>
+  <label for="whatsapp">WhatsApp number <span style="font-weight:400;color:#6f7a72">(optional)</span></label>
+  <input id="whatsapp" name="whatsapp" type="tel">
   <label for="email">Email</label>
   <input id="email" name="email" type="email">
   <label for="destination">Preferred destination</label>
@@ -100,9 +100,32 @@ function translatePage(lang){
   <input id="travellers" name="travellers" type="number" min="1" required>
   <label for="message">Your safari plans / special requests</label>
   <textarea id="message" name="message" rows="5"></textarea>
-  <button type="submit" class="btn btn-primary">Send Booking Request on WhatsApp</button>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
+    <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Send via WhatsApp</button>
+    <button type="submit" name="booking_method" value="email" class="btn" style="background:#d4b36a;color:#1c2d20;border:2px solid #d4b36a">Send via Email</button>
+  </div>
 </form>
 </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card">
+      <h3>Payment Information</h3>
+      <p>Payment details, deposit requirements and final payment deadlines are confirmed after your itinerary, accommodation and transport are agreed. Please wait for our official payment instructions before sending any payment.</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="card">
+      <h3>Follow us</h3>
+      <p style="display:flex;flex-wrap:wrap;gap:16px;margin:0">
+        <a href="https://www.instagram.com/birdsandenvironment/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/BirdsAndEnvironment/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://x.com/birdsandenviro2" target="_blank" rel="noopener">X</a>
+      </p>
+    </div>
+  </div>
 </section>
 <script>
 const params=new URLSearchParams(location.search);
@@ -115,8 +138,17 @@ if(safari){
 function sendBooking(event){
   event.preventDefault();
   const f=new FormData(event.target);
-  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+f.get('whatsapp'),'Email: '+(f.get('email')||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
-  window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+  const method=event.submitter ? event.submitter.value : 'whatsapp';
+  const whatsapp=(f.get('whatsapp')||'').trim();
+  const email=(f.get('email')||'').trim();
+  if(method==='email' && !email){ alert('Please enter your email address to send the booking request by email.'); return; }
+  if(method==='whatsapp' && !whatsapp){ alert('Please enter your WhatsApp number to send the booking request by WhatsApp, or choose Send via Email instead.'); return; }
+  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+(whatsapp||'Not provided'),'Email: '+(email||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
+  if(method==='email'){
+    window.location.href='mailto:birdsandenvironment@outlook.com?subject='+encodeURIComponent('Safari Booking Request - '+f.get('destination'))+'&body='+encodeURIComponent(msg);
+  }else{
+    window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+  }
 }
 </script>
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>
