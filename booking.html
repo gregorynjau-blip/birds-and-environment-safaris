@@ -24,20 +24,11 @@
 </header>
 
 <!-- LANGUAGE + LIVE VISITOR TOOLS -->
-<div class="site-tools" aria-label="Language, visitor count and guests online">
+<div class="site-tools" aria-label="Language and live visitor information">
   <div class="site-tools-inner">
-    <div class="language-flags" aria-label="Choose language">
-      <span class="language-label">Languages:</span>
-      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><span class="flag-emoji" aria-hidden="true">🇬🇧</span> <span>English</span></button>
-      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><span class="flag-emoji" aria-hidden="true">🇪🇸</span> <span>Español</span></button>
-      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><span class="flag-emoji" aria-hidden="true">🇮🇹</span> <span>Italiano</span></button>
-      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><span class="flag-emoji" aria-hidden="true">🇫🇷</span> <span>Français</span></button>
-      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><span class="flag-emoji" aria-hidden="true">🇩🇪</span> <span>Deutsch</span></button>
-      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><span class="flag-emoji" aria-hidden="true">🇳🇱</span> <span>Nederlands</span></button>
-      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><span class="flag-emoji" aria-hidden="true">🇨🇳</span> <span>中文</span></button>
-      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><span class="flag-emoji" aria-hidden="true">🇯🇵</span> <span>日本語</span></button>
-      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><span class="flag-emoji" aria-hidden="true">🇸🇪</span> <span>Svenska</span></button>
-    </div>
+    <div class="translate-box"><label for="languageSelect">Language:</label><select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="es">Español</option><option value="it">Italiano</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="nl">Nederlands</option><option value="zh-CN">中文</option><option value="ja">日本語</option><option value="sv">Svenska</option>
+    </select><div id="google_translate_element" aria-hidden="true"></div></div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
       <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
@@ -45,21 +36,35 @@
   </div>
 </div>
 <script>
-function translatePage(lang){
-  if(lang==='en'){ window.location.href=window.location.href.split('#')[0]; return; }
-  const url='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(window.location.href);
-  window.open(url,'_blank','noopener');
-}
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,it,fr,de,nl,zh-CN,ja,sv',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+<script>
+(function(){
+  function currentLang(){var m=document.cookie.match(/(?:^|; )googtrans=([^;]+)/); return m?decodeURIComponent(m[1]).split('/').pop():'en';}
+  function applySiteLanguage(code){
+    if(code==='en'){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; location.reload(); return;}
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=code; combo.dispatchEvent(new Event('change')); return;}
+    document.cookie='googtrans=/en/'+code+';path=/'; location.reload();
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var sel=document.getElementById('languageSelect'); if(!sel)return;
+    var lang=currentLang(); if([...sel.options].some(function(o){return o.value===lang;})) sel.value=lang;
+    sel.addEventListener('change',function(){applySiteLanguage(this.value);});
+  });
+})();
+</script>
+<script>
 (function(){
   const today=document.getElementById('visitorsToday'), online=document.getElementById('guestsOnline');
   if(!today||!online)return;
-  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris&format=json',{cache:'no-store'})
+  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris.com&format=json',{cache:'no-store'})
     .then(r=>r.ok?r.json():Promise.reject())
     .then(d=>{today.textContent=(d.today&&d.today.uv!=null)?d.today.uv:'—';online.textContent=(d.realtime!=null)?d.realtime:'—';})
     .catch(()=>{today.textContent='—';online.textContent='—';});
 })();
 </script>
-
 
 <section class="page-banner">
   <p class="eyebrow">Explore • Respect • Conserve</p>
@@ -71,13 +76,13 @@ function translatePage(lang){
 <div class="section-heading centered">
 <p class="eyebrow dark">Safari Planning</p>
 <h2>Book a Safari</h2>
-<p>Complete the form below, then choose whether to send your request by WhatsApp or email.</p>
+<p>Complete the form below. Your request will open WhatsApp so we can respond directly.</p>
 </div>
 <form class="main-booking-form" onsubmit="sendBooking(event)">
   <label for="name">Full name</label>
   <input id="name" name="name" required>
-  <label for="whatsapp">WhatsApp number <span style="font-weight:400;color:#6f7a72">(optional)</span></label>
-  <input id="whatsapp" name="whatsapp" type="tel">
+  <label for="whatsapp">WhatsApp number</label>
+  <input id="whatsapp" name="whatsapp" type="tel" required>
   <label for="email">Email</label>
   <input id="email" name="email" type="email">
   <label for="destination">Preferred destination</label>
@@ -100,32 +105,9 @@ function translatePage(lang){
   <input id="travellers" name="travellers" type="number" min="1" required>
   <label for="message">Your safari plans / special requests</label>
   <textarea id="message" name="message" rows="5"></textarea>
-  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
-    <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Send via WhatsApp</button>
-    <button type="submit" name="booking_method" value="email" class="btn" style="background:#d4b36a;color:#1c2d20;border:2px solid #d4b36a">Send via Email</button>
-  </div>
+  <button type="submit" class="btn btn-primary">Send Booking Request on WhatsApp</button>
 </form>
 </div>
-</section>
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="card">
-      <h3>Payment Information</h3>
-      <p>Payment details, deposit requirements and final payment deadlines are confirmed after your itinerary, accommodation and transport are agreed. Please wait for our official payment instructions before sending any payment.</p>
-    </div>
-  </div>
-</section>
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="card">
-      <h3>Follow us</h3>
-      <p style="display:flex;flex-wrap:wrap;gap:16px;margin:0">
-        <a href="https://www.instagram.com/birdsandenvironment/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/BirdsAndEnvironment/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://x.com/birdsandenviro2" target="_blank" rel="noopener">X</a>
-      </p>
-    </div>
-  </div>
 </section>
 <script>
 const params=new URLSearchParams(location.search);
@@ -138,17 +120,8 @@ if(safari){
 function sendBooking(event){
   event.preventDefault();
   const f=new FormData(event.target);
-  const method=event.submitter ? event.submitter.value : 'whatsapp';
-  const whatsapp=(f.get('whatsapp')||'').trim();
-  const email=(f.get('email')||'').trim();
-  if(method==='email' && !email){ alert('Please enter your email address to send the booking request by email.'); return; }
-  if(method==='whatsapp' && !whatsapp){ alert('Please enter your WhatsApp number to send the booking request by WhatsApp, or choose Send via Email instead.'); return; }
-  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+(whatsapp||'Not provided'),'Email: '+(email||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
-  if(method==='email'){
-    window.location.href='mailto:birdsandenvironment@outlook.com?subject='+encodeURIComponent('Safari Booking Request - '+f.get('destination'))+'&body='+encodeURIComponent(msg);
-  }else{
-    window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
-  }
+  const msg=['Safari Booking Request','Name: '+f.get('name'),'WhatsApp: '+f.get('whatsapp'),'Email: '+(f.get('email')||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
+  window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>

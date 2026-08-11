@@ -49,20 +49,11 @@ footer{
 </header>
 
 <!-- LANGUAGE + LIVE VISITOR TOOLS -->
-<div class="site-tools" aria-label="Language, visitor count and guests online">
+<div class="site-tools" aria-label="Language and live visitor information">
   <div class="site-tools-inner">
-    <div class="language-flags" aria-label="Choose language">
-      <span class="language-label">Languages:</span>
-      <button type="button" class="language-button" onclick="translatePage('en')" title="English"><span class="flag-emoji" aria-hidden="true">🇬🇧</span> <span>English</span></button>
-      <button type="button" class="language-button" onclick="translatePage('es')" title="Español"><span class="flag-emoji" aria-hidden="true">🇪🇸</span> <span>Español</span></button>
-      <button type="button" class="language-button" onclick="translatePage('it')" title="Italiano"><span class="flag-emoji" aria-hidden="true">🇮🇹</span> <span>Italiano</span></button>
-      <button type="button" class="language-button" onclick="translatePage('fr')" title="Français"><span class="flag-emoji" aria-hidden="true">🇫🇷</span> <span>Français</span></button>
-      <button type="button" class="language-button" onclick="translatePage('de')" title="Deutsch"><span class="flag-emoji" aria-hidden="true">🇩🇪</span> <span>Deutsch</span></button>
-      <button type="button" class="language-button" onclick="translatePage('nl')" title="Nederlands"><span class="flag-emoji" aria-hidden="true">🇳🇱</span> <span>Nederlands</span></button>
-      <button type="button" class="language-button" onclick="translatePage('zh-CN')" title="中文"><span class="flag-emoji" aria-hidden="true">🇨🇳</span> <span>中文</span></button>
-      <button type="button" class="language-button" onclick="translatePage('ja')" title="日本語"><span class="flag-emoji" aria-hidden="true">🇯🇵</span> <span>日本語</span></button>
-      <button type="button" class="language-button" onclick="translatePage('sv')" title="Svenska"><span class="flag-emoji" aria-hidden="true">🇸🇪</span> <span>Svenska</span></button>
-    </div>
+    <div class="translate-box"><label for="languageSelect">Language:</label><select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="es">Español</option><option value="it">Italiano</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="nl">Nederlands</option><option value="zh-CN">中文</option><option value="ja">日本語</option><option value="sv">Svenska</option>
+    </select><div id="google_translate_element" aria-hidden="true"></div></div>
     <div class="activity-box" aria-live="polite">
       <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
       <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
@@ -70,21 +61,35 @@ footer{
   </div>
 </div>
 <script>
-function translatePage(lang){
-  if(lang==='en'){ window.location.href=window.location.href.split('#')[0]; return; }
-  const url='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(window.location.href);
-  window.open(url,'_blank','noopener');
-}
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,it,fr,de,nl,zh-CN,ja,sv',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+<script>
+(function(){
+  function currentLang(){var m=document.cookie.match(/(?:^|; )googtrans=([^;]+)/); return m?decodeURIComponent(m[1]).split('/').pop():'en';}
+  function applySiteLanguage(code){
+    if(code==='en'){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; location.reload(); return;}
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=code; combo.dispatchEvent(new Event('change')); return;}
+    document.cookie='googtrans=/en/'+code+';path=/'; location.reload();
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var sel=document.getElementById('languageSelect'); if(!sel)return;
+    var lang=currentLang(); if([...sel.options].some(function(o){return o.value===lang;})) sel.value=lang;
+    sel.addEventListener('change',function(){applySiteLanguage(this.value);});
+  });
+})();
+</script>
+<script>
 (function(){
   const today=document.getElementById('visitorsToday'), online=document.getElementById('guestsOnline');
   if(!today||!online)return;
-  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris&format=json',{cache:'no-store'})
+  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris.com&format=json',{cache:'no-store'})
     .then(r=>r.ok?r.json():Promise.reject())
     .then(d=>{today.textContent=(d.today&&d.today.uv!=null)?d.today.uv:'—';online.textContent=(d.realtime!=null)?d.realtime:'—';})
     .catch(()=>{today.textContent='—';online.textContent='—';});
 })();
 </script>
-
 
 
 <div class="container">
