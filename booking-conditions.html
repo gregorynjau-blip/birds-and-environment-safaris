@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Conditions | Birds and Environment Safaris</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.site-tools{display:block;width:100%;background:#f5efe3;border-bottom:1px solid rgba(0,0,0,.08);position:relative;z-index:20}
+.site-tools-inner{max-width:1200px;margin:0 auto;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.translate-box{display:flex;align-items:center;gap:8px;color:#23402d;font-size:.9rem}
+#languageSelect{padding:7px 30px 7px 10px;border:1px solid #b6a06b;border-radius:6px;background:#fff;color:#23402d;font:inherit}
+.activity-box{display:flex;gap:8px;flex-wrap:wrap}
+.activity-pill{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #d8c8a4;color:#23402d;font-size:.82rem}
+.online-dot{width:8px;height:8px;border-radius:50%;background:#2b9b5b;display:inline-block;box-shadow:0 0 0 3px rgba(43,155,91,.12)}
+.chat-float{position:fixed;right:18px;bottom:18px;z-index:1000;background:#1f7a45;color:#fff;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+.chat-float:hover{transform:translateY(-1px)}
+</style>
+</head>
+<body class="site-page">
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Birds &amp; Environment Safaris</span>
+      <span class="brand-tagline">Explore • Respect • Conserve</span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation menu">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tours.html">Tours</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="nav-book">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="site-tools" aria-label="Language and live visitor information">
+  <div class="site-tools-inner">
+    <div class="translate-box"><label for="languageSelect">Language:</label><select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="es">Español</option><option value="it">Italiano</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="nl">Nederlands</option><option value="zh-CN">中文</option><option value="ja">日本語</option><option value="sv">Svenska</option>
+    </select><div id="google_translate_element" aria-hidden="true"></div></div>
+    <div class="activity-box" aria-live="polite">
+      <span class="activity-pill">👁 Visitors today: <strong id="visitorsToday">—</strong></span>
+      <span class="activity-pill"><span class="online-dot"></span> Guests online: <strong id="guestsOnline">—</strong></span>
+    </div>
+  </div>
+</div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'es,it,fr,de,nl,zh-CN,ja,sv',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+<script>
+(function(){
+  function currentLang(){var m=document.cookie.match(/(?:^|; )googtrans=([^;]+)/); return m?decodeURIComponent(m[1]).split('/').pop():'en';}
+  function applySiteLanguage(code){
+    if(code==='en'){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'; location.reload(); return;}
+    var combo=document.querySelector('.goog-te-combo');
+    if(combo){combo.value=code; combo.dispatchEvent(new Event('change')); return;}
+    document.cookie='googtrans=/en/'+code+';path=/'; location.reload();
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var sel=document.getElementById('languageSelect'); if(!sel)return;
+    var lang=currentLang(); if([...sel.options].some(function(o){return o.value===lang;})) sel.value=lang;
+    sel.addEventListener('change',function(){applySiteLanguage(this.value);});
+  });
+})();
+</script>
+<script>
+(function(){
+  const today=document.getElementById('visitorsToday'), online=document.getElementById('guestsOnline');
+  if(!today||!online)return;
+  fetch('https://icount.kr/api.php?id=birdsandenvironmentsafaris.com&format=json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():Promise.reject())
+    .then(d=>{today.textContent=(d.today&&d.today.uv!=null)?d.today.uv:'—';online.textContent=(d.realtime!=null)?d.realtime:'—';})
+    .catch(()=>{today.textContent='—';online.textContent='—';});
+})();
+</script>
+
+<main>
+<section class="page-banner">
+  <p class="eyebrow">Before You Book</p>
+  <h1>Booking Conditions</h1>
+  <p>Please read these conditions before confirming a safari with Birds &amp; Environment Safaris.</p>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="card">
+<h2>1. Booking and payment</h2>
+<p>A 20% deposit is required to confirm a booking. The remaining balance is normally due 30 days before the safari starts. Last-minute bookings may have different payment arrangements, which will be confirmed with the guest.</p>
+<p>Payments can be arranged by bank transfer or card. Card payments may attract a 5% processing surcharge. Any applicable bank or intermediary charges are the guest's responsibility.</p>
+</div>
+
+<div class="card">
+<h2>2. Cancellation charges</h2>
+<p>Cancellation requests should be made in writing. The applicable charge is based on the number of days remaining before departure:</p>
+<ul>
+<li>30 days or more before departure: 30% of the services provided by Birds &amp; Environment Safaris.</li>
+<li>29–15 days before departure: 50%.</li>
+<li>14–7 days before departure: 75%.</li>
+<li>6–0 days before departure: 100%.</li>
+</ul>
+<p>These charges reflect commitments made for accommodation, transport, park services and other arrangements. Unused or uncompleted services are not refundable where the costs have already been incurred.</p>
+</div>
+
+<div class="card">
+<h2>3. Changes to the safari</h2>
+<p>Wildlife, weather, road conditions, park regulations and other circumstances can require changes. We may adjust the route or order of activities when necessary for safety, practicality or to improve the guest experience.</p>
+<p>If a vehicle develops a problem, we will arrange a suitable replacement where possible and work to make up reasonable lost safari time through additional safari hours or days when practical.</p>
+</div>
+
+<div class="card">
+<h2>4. Group and vehicle arrangements</h2>
+<p>Safari vehicles accommodate up to 7 passengers. Unless a different arrangement is agreed in writing, a minimum of 2 guests is required for a safari booking.</p>
+</div>
+
+<div class="card">
+<h2>5. Travel documents and insurance</h2>
+<p>Guests are responsible for having valid passports, visas, entry documents, required health certificates and appropriate travel insurance. We strongly recommend insurance that covers medical treatment, emergency evacuation and trip cancellation or interruption.</p>
+</div>
+
+<div class="card">
+<h2>6. Safety and liability</h2>
+<p>Safaris and outdoor activities involve natural risks. We take reasonable steps to provide safe, professional services, but we cannot accept responsibility for loss or damage to personal property, illness, injury or death, delays, missed connections, severe weather, changes caused by road or park conditions, or other events outside our reasonable control, subject to applicable Tanzanian law.</p>
+</div>
+
+<div class="card">
+<h2>7. Travel protection</h2>
+<p>Because unexpected events can affect a trip before or during travel, we recommend comprehensive travel protection. Guests should choose cover appropriate to the activities and destinations included in their itinerary.</p>
+</div>
+
+<div class="card">
+<h2>8. Contact</h2>
+<p><strong>Birds and Environment Safaris</strong><br>
+WhatsApp: +255 716 108 475<br>
+Email: birdsandenvironment@outlook.com<br>
+Dar es Salaam, Tanzania</p>
+<div class="actions"><a class="btn btn-primary" href="booking.html">Book a Safari</a><a class="btn btn-earth" href="faq.html">Read FAQ</a></div>
+</div>
+</div>
+</section>
+</main>
+
+<a class="chat-float" href="https://wa.me/255716108475?text=Hello%20Birds%20and%20Environment%20Safaris%2C%20I%20would%20like%20to%20ask%20about%20a%20safari." target="_blank" rel="noopener" aria-label="Chat with Birds and Environment Safaris on WhatsApp">💬 Chat with Us</a>
+
+<footer class="site-footer">
+<div class="container grid grid-3">
+<div><h3>Birds &amp; Environment Safaris</h3><p>Explore • Respect • Conserve</p><p>Southern Tanzania wildlife and birdwatching journeys.</p></div>
+<div><h3>Explore</h3><p><a href="tours.html">Tours</a><br><a href="faq.html">FAQ</a><br><a href="reviews.html">Reviews</a><br><a href="booking-conditions.html">Booking Conditions</a></p></div>
+<div><h3>Contact</h3><p><a href="https://wa.me/255716108475">WhatsApp</a><br><a href="mailto:birdsandenvironment@outlook.com">Email</a><br>Dar es Salaam, Tanzania</p></div>
+</div>
+<div class="footer-social"><h3>Follow Us</h3>
+<a href="https://www.facebook.com/BirdsAndEnvironment/" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.instagram.com/birdsandenvironment/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://x.com/birdsandenviro2" target="_blank" rel="noopener">X (Twitter)</a>
+</div>
+</footer>
+</body>
+</html>

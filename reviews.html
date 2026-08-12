@@ -25,6 +25,10 @@
 @media(max-width:700px){.gift-card-inner{flex-direction:column;align-items:flex-start}.site-tools-inner{align-items:flex-start}.activity-box{width:100%}}
 </style>
 
+<style>
+.chat-float{position:fixed;right:18px;bottom:18px;z-index:1000;background:#1f7a45;color:#fff;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+.chat-float:hover{transform:translateY(-1px)}
+</style>
 </head>
 <body class="site-page">
 <header class="site-header">
@@ -91,12 +95,43 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 </section>
 <section class="section">
 <div class="container">
-<div class="eyebrow">Reviews</div>
+<div class="eyebrow">Guest Reviews</div>
 <h2 class="section-title">What our guests value</h2>
+<p>We welcome honest feedback from travelers who have experienced our safaris, birdwatching and other Tanzania journeys. Guest names and countries are published only with permission.</p>
 <div class="grid grid-3">
-<div class="card"><h3>★★★★★</h3><p>“A wonderful way to experience Southern Tanzania with a personal touch.”</p><strong>Safari Guest</strong></div>
-<div class="card"><h3>★★★★★</h3><p>“The birdwatching focus made the trip feel completely different from a standard safari.”</p><strong>Birdwatching Guest</strong></div>
-<div class="card"><h3>★★★★★</h3><p>“Clear communication, flexible planning and beautiful wildlife experiences.”</p><strong>Safari Guest</strong></div>
+<div class="card"><h3>★★★★★</h3><p>“A wonderful way to experience Southern Tanzania with a personal touch.”</p><strong>Safari Guest</strong><br><small>Country shared with permission</small></div>
+<div class="card"><h3>★★★★★</h3><p>“The birdwatching focus made the trip feel completely different from a standard safari.”</p><strong>Birdwatching Guest</strong><br><small>Country shared with permission</small></div>
+<div class="card"><h3>★★★★★</h3><p>“Clear communication, flexible planning and beautiful wildlife experiences.”</p><strong>Safari Guest</strong><br><small>Country shared with permission</small></div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="grid grid-2">
+<div>
+<div class="eyebrow">Review Us</div>
+<h2 class="section-title">Share your experience</h2>
+<p>If you have traveled with Birds &amp; Environment Safaris, tell future guests what you enjoyed. You can include your name, country and safari experience, and we will publish your feedback with your permission.</p>
+<div class="actions">
+<a class="btn btn-primary" href="https://wa.me/255716108475?text=Hello%20Birds%20and%20Environment%20Safaris%2C%20I%20would%20like%20to%20share%20a%20review.%20My%20name%20is%20%5Bname%5D%20and%20I%20am%20from%20%5Bcountry%5D." target="_blank" rel="noopener">Send Review via WhatsApp</a>
+<a class="btn btn-earth" href="mailto:birdsandenvironment@outlook.com?subject=Guest%20Review%20-%20Birds%20and%20Environment%20Safaris">Send Review by Email</a>
+</div>
+</div>
+<div class="card">
+<h3>Guest details for publication</h3>
+<form onsubmit="sendReview(event)">
+<label for="reviewName">Guest name</label>
+<input id="reviewName" required>
+<label for="reviewCountry">Country</label>
+<input id="reviewCountry" required>
+<label for="reviewTrip">Safari / experience</label>
+<input id="reviewTrip" placeholder="e.g. Ruaha safari or birdwatching">
+<label for="reviewText">Your review</label>
+<textarea id="reviewText" rows="5" required></textarea>
+<button class="btn btn-primary" type="submit">Send My Review</button>
+</form>
+<p><small>We will confirm permission before publishing your name and country on the website.</small></p>
+</div>
 </div>
 </div>
 </section>
@@ -126,7 +161,7 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 <footer class="site-footer">
 <div class="container grid grid-3">
 <div><h3>Birds &amp; Environment Safaris</h3><p>Explore • Respect • Conserve</p><p>Southern Tanzania wildlife and birdwatching journeys.</p></div>
-<div><h3>Explore</h3><p><a href="tours.html">Tours</a><br><a href="gallery.html">Gallery</a><br><a href="travel-guide.html">Travel Guide</a><br><a href="faq.html">FAQ</a></p></div>
+<div><h3>Explore</h3><p><a href="tours.html">Tours</a><br><a href="gallery.html">Gallery</a><br><a href="travel-guide.html">Travel Guide</a><br><a href="faq.html">FAQ</a><br><a href="booking-conditions.html">Booking Conditions</a><br><a href="reviews.html">Review Us</a></p></div>
 <div><h3>Contact</h3><p><a href="https://wa.me/255716108475">WhatsApp</a><br><a href="mailto:birdsandenvironment@outlook.com">Email</a><br>Dar es Salaam, Tanzania</p></div>
 </div>
 <div class="footer-social">
@@ -137,6 +172,19 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
 </div>
 </footer>
 <script src="js/script.js"></script>
+<script>
+function sendReview(event){
+  event.preventDefault();
+  const name=document.getElementById('reviewName').value;
+  const country=document.getElementById('reviewCountry').value;
+  const trip=document.getElementById('reviewTrip').value||'Not specified';
+  const text=document.getElementById('reviewText').value;
+  const msg=['Guest Review','Guest: '+name,'Country: '+country,'Experience: '+trip,'Review: '+text].join('\n');
+  window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
 <script src="https://icount.kr/c.js?id=birdsandenvironmentsafaris.com"></script>
+<a class="chat-float" href="https://wa.me/255716108475?text=Hello%20Birds%20and%20Environment%20Safaris%2C%20I%20would%20like%20to%20ask%20about%20a%20safari." target="_blank" rel="noopener" aria-label="Chat with Birds and Environment Safaris on WhatsApp">💬 Chat with Us</a>
+
 </body>
 </html>
