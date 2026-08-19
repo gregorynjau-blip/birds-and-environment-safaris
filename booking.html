@@ -167,7 +167,33 @@ function sendBooking(event){
   const msg=['Safari Booking Request','Name: '+name,'WhatsApp: '+(whatsapp||'Not provided'),'Email: '+(email||'Not provided'),'Destination: '+f.get('destination'),'Travel date: '+f.get('date'),'Travellers: '+f.get('travellers'),'Message: '+(f.get('message')||'None')].join('\n');
   if(method==='email'){
     const subject='Safari Booking Request - '+f.get('destination');
-    window.location.href='mailto:birdsandenvironment@outlook.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(msg);
+    const emailData = new FormData();
+    emailData.append('_subject', subject);
+    emailData.append('_captcha', 'false');
+    emailData.append('_template', 'table');
+    emailData.append('Name', name);
+    emailData.append('Email', email);
+    emailData.append('WhatsApp', whatsapp || 'Not provided');
+    emailData.append('Destination', f.get('destination') || '');
+    emailData.append('Travel date', f.get('date') || '');
+    emailData.append('Travellers', f.get('travellers') || '');
+    emailData.append('Safari plans / special requests', f.get('message') || 'None');
+    fetch('https://formsubmit.co/ajax/birdsandenvironment@outlook.com', {
+      method:'POST',
+      body:emailData,
+      headers:{'Accept':'application/json'}
+    })
+    .then(function(response){
+      if(!response.ok) throw new Error('Email service error');
+      return response.json();
+    })
+    .then(function(){
+      alert('Thank you. Your safari booking has been sent by email. We will contact you soon.');
+      event.target.reset();
+    })
+    .catch(function(){
+      alert('We could not send the email right now. Please try again or contact us on WhatsApp.');
+    });
   } else {
     window.open('https://wa.me/255716108475?text='+encodeURIComponent(msg),'_blank');
   }
