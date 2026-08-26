@@ -364,6 +364,39 @@ function googleTranslateElementInit(){new google.translate.TranslateElement({pag
       </article>
 
 
+      <!-- SAADANI -->
+      <article class="feature-card">
+        <img class="tour-image" src="images/saadani-landcruiser-beach.jpg" alt="Safari Land Cruiser on the beach at Saadani National Park, Tanzania">
+        <span class="feature-icon">🌴</span>
+        <h3>Saadani National Park</h3>
+        <p>Saadani is where Southern Tanzania's wildlife country meets the Indian Ocean. It is a distinctive safari destination for travellers who want game drives, birdwatching, coastal scenery and time on a beautiful beach in one journey.</p>
+        <p><strong>Why guests choose it:</strong> Enjoy wildlife and birdlife in the park, explore coastal habitats and experience the rare combination of a traditional safari setting with the Indian Ocean right beside it.</p>
+        <p><strong>Tailor-made travel:</strong> Build your Saadani experience around wildlife, birdwatching, photography, beach time and your preferred accommodation and travel style.</p>
+        <p><strong>Suggested itinerary: 3 Days / 2 Nights</strong></p>
+        <p><strong>Day 1 – Arrival & Game Drive:</strong> Travel to Saadani, settle into your accommodation and enjoy an afternoon game drive.<br>
+        <strong>Day 2 – Wildlife, Birdwatching & Beach:</strong> Spend the day exploring Saadani's wildlife and bird habitats, with time to enjoy the Indian Ocean coast.<br>
+        <strong>Day 3 – Morning Experience & Departure:</strong> Enjoy a final morning nature or beach experience before your onward journey.</p>
+        <div class="itinerary-booking">
+          <h4>Plan This Safari</h4>
+          <form class="itinerary-booking-form" onsubmit="sendItineraryBooking(event, this)">
+            <input type="hidden" name="safari" value="Saadani National Park">
+            <div class="booking-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="tel" name="whatsapp" placeholder="WhatsApp number">
+              <input type="email" name="email" placeholder="Email address">
+              <input type="date" name="travel_date" aria-label="Preferred travel date" required>
+              <input type="number" name="travellers" min="1" placeholder="Travellers" required>
+            </div>
+            <textarea name="message" rows="3" placeholder="Tell us about your safari"></textarea>
+            <div class="booking-options">
+              <button type="submit" name="booking_method" value="whatsapp" class="btn btn-primary">Enquire via WhatsApp</button>
+              <button type="submit" name="booking_method" value="email" class="btn btn-outline itinerary-email-btn">Enquire via Email</button>
+            </div>
+          </form>
+        </div>
+      </article>
+
+
       <article class="feature-card">
         <img class="tour-image" src="images/kitulo-national-park.jpg" alt="Kitulo National Park highland landscape and wildflowers, Tanzania">
         <span class="feature-icon">🌸</span>
